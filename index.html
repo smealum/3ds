@@ -10,13 +10,48 @@
     <script>
         // pretty masterful javascript code here
         // i wrote it myself
-        function toggleDisplay(id)
+        function getUrlFromVersion(v)
         {
-            var el = document.getElementById(id);
-            if(el.style.display == "none") el.style.display = "block";
-            else el.style.display = "none";
+            return "http://smealum.github.io/ninjhax2/Pvl9iD2Im5/otherapp/"+getFilenameFromVersion(v)+".bin";
+        }
+
+        var global_version = {};
+
+        function updatePayload()
+        {
+            document.location.href = getUrlFromVersion([global_version[1], global_version[2], global_version[3], global_version[4], global_version[5], global_version[0]]);
         }
     </script>
+    <script src="payload_select.js"></script>
+    <style type='text/css'>
+        .firmware-form {
+            /*margin-top:300px;*/
+            text-align:center;
+            font-size:18px;
+        }
+        .firmware-form select {
+            /*width:50px;*/
+            height:40px;
+            font-size:18px;
+            text-align:center;
+            border: 1px solid #000000;
+            background: #ffffff;
+            color: #000000;
+        }
+
+        .firmware-form button {
+            border: 1px solid #000000;
+            background: #ffffff;
+            border-radius: 0px;
+            box-shadow: rgba(255,255,255,0.4) 0 0px 0, inset rgba(255,255,255,0.4) 0 0px 0;
+            color: #000000;
+            font-family: helvetica, serif;
+            height:40px;
+            font-size:18px;
+            text-decoration: none;
+            vertical-align: middle;
+        }
+    </style>
 </head>
 
 <body>
@@ -127,6 +162,28 @@
 
         To make things easier, we put together the <a href="https://smealum.github.io/ninjhax2/starter.zip">homebrew starter kit</a>; you can just download it and extract it at the root of your SD card. Alternatively, you may choose to only download <a href="https://smealum.github.io/ninjhax2/boot.3dsx">The Homebrew Launcher menu executable</a> and place it at the root of your SD card. <br>
         No matter what, you should have a file named boot.3dsx placed at the root of your SD card. <br/>
+
+    </div>
+
+    <a name="otherapp"></a> 
+    <div class="content">
+        <h2>Otherapp payloads</h2>
+        <br>
+        Other exploits (not ninjhax, ironhax or tubehax) might also allow you to run the homebrew launcher and require you to get an "otherapp payload" to do so. This payload is a binary file specific to your firmware version. You can download your own otherapp payload by selecting your firmware version below (only select NEW if you are running this on a New 3DS (XL); regular 3DS, 3DS XL and 2DS owners should select OLD) :
+        <br>
+        <br>
+
+        <form class="firmware-form" method="post">
+            <select data-id="0" name="five"></select> 
+            <select data-id="1" name="zero"></select>.
+            <select data-id="2" name="one"></select>.
+            <select data-id="3" name="two"></select>-
+            <select data-id="4" name="three"></select>
+            <select data-id="5" name="four"></select>
+            <br>
+            <br>
+            <button type="button" onclick="updatePayload()">Download payload</button>
+        </form>
 
     </div>
 
