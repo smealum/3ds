@@ -170,8 +170,7 @@ window.onload=function(){
         },
         '10': {
             '0': zeroMicro_1,
-            '1': zeroMicro_1,
-            '2': zeroMicro_1
+            '1': zeroMicro_1
         }
     }
 
