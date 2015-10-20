@@ -80,6 +80,16 @@ function getMenuVersion(v)
             {
                 return "20480";
             }
+        }else if(v[1]==2)
+        {
+            if (v[4]=="U")
+            {
+                return "22528_usa";
+            }
+            else
+            {
+                return "21504";
+            }
         }
     }
 }
@@ -160,7 +170,8 @@ window.onload=function(){
         },
         '10': {
             '0': zeroMicro_1,
-            '1': zeroMicro_1
+            '1': zeroMicro_1,
+            '2': zeroMicro_1
         }
     }
 
