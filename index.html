@@ -19,7 +19,12 @@
 
         function getUrlFromVersion(v)
         {
-            return "http://smealum.github.io/ninjhax2/Pvl9iD2Im5/otherapp/"+getFilenameFromVersion(v)+".bin";
+            return "http://smealum.github.io/ninjhax2/JL1Xf2KFVm/otherapp/"+getFilenameFromVersion(v)+".bin";
+        }
+
+        function getRopbinUrlFromVersion(v)
+        {
+            return "http://smealum.github.io/ninjhax2/JL1Xf2KFVm/r/"+getFilenameFromVersion(v)+".bin";
         }
 
         var global_version = {};
@@ -27,6 +32,11 @@
         function updatePayload()
         {
             document.location.href = getUrlFromVersion([global_version[1], global_version[2], global_version[3], global_version[4], global_version[5], global_version[0]]);
+        }
+
+        function updateRopbin()
+        {
+            document.location.href = getRopbinUrlFromVersion([global_version[1], global_version[2], global_version[3], global_version[4], global_version[5], global_version[0]]);
         }
     </script>
     <script src="payload_select.js"></script>
@@ -69,7 +79,7 @@
 
     <div class="content">
         Welcome to the official 3DS Homebrew Launcher website ! This page is meant to be a hub between all the best and newest ways to get homebrew running on your system. <br>
-        If you want to see homebrew in action, check out <a href="https://www.youtube.com/watch?v=vwX92Hf0Dsg">this video</a> !
+        If you want to see homebrew in action, check out <a href="https://www.youtube.com/watch?v=xryrEpVbCrk">this video</a> !
     </div>
 
     <div class="content">
@@ -202,9 +212,9 @@
 
     <a name="otherapp"></a> 
     <div class="content">
-        <h2>Otherapp payloads</h2>
+        <h2>Otherapp/ropbin payloads</h2>
         <br>
-        Some exploits (not ninjhax, ironhax or tubehax) might allow you to run the homebrew launcher and require you to get an "otherapp payload" to do so. This payload is a binary file specific to your firmware version. You can download your own otherapp payload by selecting your firmware version below (only select NEW if you are running this on a New 3DS (XL); regular 3DS, 3DS XL and 2DS owners should select OLD) :
+        Some exploits (not ninjhax, ironhax or tubehax) might allow you to run the homebrew launcher and require you to get an "otherapp payload" (or a "ropbin payload") to do so. This payload is a binary file specific to your firmware version. You can download your own payload by selecting your firmware version below (only select NEW if you are running this on a New 3DS (XL); regular 3DS, 3DS XL and 2DS owners should select OLD) :
         <br>
         <br>
 
@@ -217,7 +227,8 @@
             <select data-id="5" name="four"></select>
             <br>
             <br>
-            <button type="button" onclick="updatePayload()">Download payload</button>
+            <button type="button" onclick="updatePayload()">Download otherapp</button>
+            <button type="button" onclick="updateRopbin()">Download ropbin</button>
         </form>
 
     </div>
