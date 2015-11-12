@@ -113,6 +113,7 @@
             <div id="browser_content" style="display: none;">
                 If your 3DS is on a compatible version, you can use the stock web browser to get homebrew running ! Head over to <a href="http://yls8.mtheall.com/3dsbrowserhax.php">yellows8's browserhax page</a> and follow instructions there.
             </div>
+
             <a href="javascript:toggleDisplay('menu_content');"><table> <tr>
                 <td> <img src="images/menu_icon.png" width="60" style="margin-right: 8px; border-radius: 5px;"> </td>
                 <td style="font-size: 1.2em;"> Home Menu </td>
@@ -120,6 +121,16 @@
             <div id="menu_content" style="display: none;">
                 If your 3DS is on a compatible version, you can use home menu itself (!) as a permanent entrypoint to get homebrew running ! Head over to <a href="https://github.com/yellows8/3ds_homemenuhax">yellows8's homemenuhax page</a> and follow instructions there. Note that if you use this, you will be unable to have custom themes.
             </div>
+
+            <a href="javascript:toggleDisplay('oot_content');"><table> <tr>
+                <td> <img src="images/oot_icon.png" width="60" style="margin-right: 8px; border-radius: 5px;"> </td>
+                <td style="font-size: 1.2em;"> The Legend of Zelda : Ocarina of Time </td>
+            </tr> </table></a>
+            <div id="oot_content" style="display: none;">
+                If you own a copy of The Legend of Zelda : Ocarina of Time, you can install oot3dhax. This can either be done by first using another hax method to run the oot3dhax installer, or by directly writing a raw savegame image to your gamecard. For the former option, you can find the installer in the <a href="#prepare">homebrew starter kit</a>. For the latter, you can find more information on <a href="https://github.com/yellows8/oot3dhax/releases">yellows8's repository</a>.
+            </div>
+            
+
             <a href="javascript:toggleDisplay('if_content');"><table> <tr>
                 <td> <img src="images/if_icon.png" width="60" style="margin-right: 8px; border-radius: 5px;"> </td>
                 <td style="font-size: 1.2em;"> IronFall </td>
@@ -147,13 +158,6 @@
                 <li>Reboot your 3DS and open IronFall. Select the save slot that says "ironhax" and press A. The Homebrew Launcher will start !</li>
                 </ol>
             </div>
-            <a href="javascript:toggleDisplay('cn_content');"><table> <tr>
-                <td> <img src="images/cn_icon.png" width="60" style="margin-right: 8px; border-radius: 5px;"> </td>
-                <td style="font-size: 1.2em;"> Cubic Ninja </td>
-            </tr> </table></a>
-            <div id="cn_content" style="display: none;">
-                If you own a copy of Cubic Ninja (and don't plan on selling it for massive profits), please head over to <a href="http://smealum.github.io/ninjhax2/">the ninjhax website and follow instructions there</a>.
-            </div>
             <a href="javascript:toggleDisplay('ssb_content');"><table> <tr>
                 <td> <img src="images/ssb_icon.png" width="60" style="margin-right: 8px; border-radius: 5px;"> </td>
                 <td style="font-size: 1.2em;"> Super Smash Bros (or demo) </td>
@@ -161,6 +165,7 @@
             <div id="ssb_content" style="display: none;">
                 If you own Super Smash Bros (or the free demo), a New 3DS, some compatible wifi hardware and aren't afraid of going under the hood, then you can head over to <a href="https://github.com/yellows8/3ds_smashbroshax">yellows8's  smashbroshax webpage and follow instructions there</a>. Do note that this is currently the least convenient method of running homebrew, and will likely be best suited to installing a more permanent setup such as ironhax (see above).
             </div>
+
             <a href="javascript:toggleDisplay('ytb_content');"><table> <tr>
                 <td> <img src="images/ytb_icon.png" width="60" style="margin-right: 8px; border-radius: 5px;"> </td>
                 <td style="font-size: 1.2em;"> YouTube </td>
@@ -299,7 +304,7 @@
         <h2>Credits</h2>
         <br>
         <p>
-        Most of the code for ninjhax, ironhax and tubehax was written by smea. Everything pertaining to smashbroshax and browserhax was made by yellows8. The vulnerability used for homemenuhax was discovered by yellows8 and exploited jointly by yellows8 and smea. In any case a lot of help was provided by the following people : <br/>
+        Most of the code for ninjhax, ironhax and tubehax was written by smea. Everything pertaining to smashbroshax, oot3dhax and browserhax was made by yellows8. The vulnerability used for homemenuhax was discovered by yellows8 and exploited jointly by yellows8 and smea. In any case a lot of help was provided by the following people : <br/>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         - yellows8<br/>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -308,6 +313,8 @@
         - mtheall<br/>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         - fincs<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        - megazig, Bond697<br/>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         - Fluto, Arkhandar (hbmenu design) <br/>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -320,7 +327,7 @@
         - GW (bringing attention to the webkit bug used by tubehax) <br/>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         - derlanalmeida, ThibG (icons on this page) <br/>
-        We'd all also like to thank everyone who has been contributing to the 3DS scene in one way or another, including (but not limited to) :  yuriks, Subv, Bond697, sm, StapleButter, bunnei, WinterMute, neobrain, and, like, so many other people.
+        We'd all also like to thank everyone who has been contributing to the 3DS scene in one way or another, including (but not limited to) :  yuriks, Subv, sm, StapleButter, bunnei, WinterMute, neobrain, and, like, so many other people.
         </p>
 
     </div>
