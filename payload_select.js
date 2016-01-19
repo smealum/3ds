@@ -100,6 +100,16 @@ function getMenuVersion(v)
             {
                 return "22528";
             }
+        }else if(v[1]==4)
+        {
+            if (v[4]=="U")
+            {
+                return "24578_usa";
+            }
+            else
+            {
+                return "23554";
+            }
         }
     }
 }
