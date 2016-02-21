@@ -1,0 +1,231 @@
+system introduction
+
+	slide
+
+		arm11
+
+		diagram
+			[arm11]
+			[fcram]
+			[wram]
+			[vram]
+
+		text
+			arm11 runs a fully multitasking OS
+			kernel lives inside of wram
+			apps, applets and system modules live in fcram (will go into more details later)
+
+
+	slide
+
+		arm9
+
+		diagram
+			[arm11]
+			[fcram]
+			[wram]
+			[vram]
+			[arm9]
+			[arm9 mem]
+			[arm9 itcm]
+			[sd/nand]
+			[crypto hardware]
+			[pxi]
+
+		text
+			arm9 runs a similar kernel to arm11 but only one process : process9
+			handles all sensitive crypto in hardware, interfaces with key scrambler
+			has exclusive access to arm9 mem/itcm, but shares access to everything else
+			communicates with arm11 through PXI (hardware FIFO)
+
+
+security system introduction
+
+	slide
+
+		crypto
+
+		text
+			basically anything that can be signed is signed (and checked by arm9)
+			basically anything that can be encrypted is encrypted (and decrypted by arm9)
+			basically anything that can be linked through crypto to a specific console/device is
+				SD game data
+				savegames (SD is console-specific, gamecard is gamecard-specific)
+				extdata
+
+	slide
+
+		layers of security
+
+		diagram
+			[arm11 userland [arm11 kernel [arm9 userland [arm9 kernel]]]]
+			(concentric circles ?)
+
+		text
+			notes
+				OS sandboxes individual processes => getting to one userland process shouldn't give us access to other processes (or their data)
+				in practice arm9 userland and arm9 kernel are the same : svcBackdoor lets us execute code in kernel mode from process9
+				arm9 execution is considered to be full control, but arm11 kernel mode code execution is more than enough for nefarious purposes
+
+
+arm11 userland exploitation
+
+	slide
+
+		getting initial access
+
+		text
+			we want to break through the first layer : we need to attack an application
+			DEP : code execution is non-trivial
+			no ASLR : savegame exploits are totally fair game
+			encrypted and authenticated savegames : need to find initial entrypoints
+
+	slide
+
+		popular targets
+
+		text
+			webkit is used in several app(let)s
+				internet browser
+				youtube application (no auth or TLS, can just redirect through DNS)
+				very old version
+			cubic ninja !
+				has a level editor
+				allows sharing level editors through QR codes
+				scan-a-hax
+
+	slide
+
+		ROP
+
+		text
+			DEP is strictly enforced : we can't change permissions on existing pages or map new executable ones
+			end up using ROP all the time for everything
+			basic idea of ROP : manufacture a fake stack such that return addresses point to useful intructions followed by return instructions
+				(include tiny example)
+
+	slide
+
+		GPU
+
+		diagram
+			[arm11]
+			[gpu]
+			[fcram]
+			[wram]
+			[vram]
+
+		text
+			the GPU has DMA for things like fetching textures, rendering framebuffers, and generally moving data around
+			it has access to VRAM... and most of FCRAM
+			the address checks enforced by the corresponding sysmodule are very weak
+				=> can overwrite anything within GPU's physical access range
+
+	slide
+
+		exploiting GPU DMA
+
+		text
+			we can overwrite any executable section within range
+			no randomization in the physical layout, so no problem
+				(even if there was, DMA goes both ways so we could search for our target)
+			we finally have proper code execution !
+
+	slide
+
+		stretching the sandbox
+
+		diagram
+			[fcram [[GPU accessible APP | SYSTEM-lo] | SYSTEM-hi | BASE]]
+
+		text
+			we have code execution, but are limited to the current application's sandbox
+				can only access its own savedata, likely can't access SD card
+				can only access its services and syscalls
+				can't alter its memory layout (number of executable pages...)
+			but GPU can access more !
+				APP contains the currently running application
+				SYSTEM contains various applets
+
+	slide
+
+		SYSTEM
+
+		diagram
+			[SYSTEM [shared font | heaps and shit | cutoff | menu text | NS text]]
+
+		text
+			home menu is always running in the background and has access to useful resources
+				ns:s gives us power of life and death over processes
+				SD card access
+			NS is a system module which runs inside of SYSTEM
+				am:u gives us power to install, remove and downgrade individual titles
+				system module system calls are useful !
+			unfortunately, most interesting stuff is out of reach
+				code sections for both are after the cutoff
+
+	slide
+
+		taking over menu
+
+		text
+			fortunately, menu has a heap within reach !
+				find an object, use it to get ROP execution under menu
+
+					object:
+						.word MENU_OBJECT_LOC + vtable - object ; pointer to manufactured vtable, and new sp
+						.word ROP_MENU_POP_PC ; pc (pop {pc} to jump to ROP)
+
+					vtable: ; also initial ROP
+						.word ROP_MENU_POP_R4R5PC ; pop {r4, r5, pc} : skip pivot
+							.word MENU_OBJECT_LOC + ropload_stackpivot - object + 0x1c ; r4
+							.word ROP_MENU_STACK_PIVOT ; stack pivot ; also r5 (garbage)
+					rop:
+						.word ROP_MENU_STACK_PIVOT ; stack-pivot to the main ROP from the ropbin.
+
+					ropload_stackpivot:
+						.word 0, 0, 0, 0, 0, 0
+						.word MENU_LOADEDROP_BUFADR ; sp
+						.word ROP_MENU_POP_PC ; pc
+
+	slide
+
+		running homebrew from menu
+
+		diagram
+
+		text
+			run homebrew "service" under home menu, written in ROP
+				handles homebrew boot process
+					uses ns:s to kill current app process, create new one
+						new process is picked based on needed capabilities for homebrew
+					takes over new process immediately using GPU DMA
+					sends handles for additional resources (SD, services, memory...) to new process
+					loads homebrew binary into process
+				handles home button notifications (takes screenshots)
+				handles power button notifications
+				handles return-to-menu key combo
+
+	slide
+
+		taking over NS
+
+		diagram
+
+		text
+			can we do the same thing to NS ?
+				unfortunately, no data used by NS is accessible to the GPU
+			can we move NS to a GPU-accessible location ?
+				one trick is to manipulate the physical heap prior to allocation of targets
+				idea : kill NS, allocate a bunch of memory in SYSTEM, then restart NS and take it over with GPU
+					problem : we rely on ns:s to kill/start processes, which of course is handled by NS
+
+	slide
+
+		taking over NS
+
+		text
+
+	slide
+
+		secondary entrypoints

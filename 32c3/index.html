@@ -1,0 +1,1833 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Breaking the 3DS security system</title>
+    <meta name="description" content="" />
+    <meta name="author" content="plutoo, derrek, smealum" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/blood.css" id="theme">
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+    <style>
+      pre {
+      font-size: 18pt !important;
+      }
+      
+      div.tile>img
+      {
+      border: none;
+      background-color: transparent;
+      }
+    </style>
+    <script src="assets/javascript/framework/mootools-core-1.3.2.js" type="text/javascript" charset="utf-8"></script>
+    <script src="assets/javascript/framework/mootools-more-1.3.2.1.js" type="text/javascript" charset="utf-8"></script>
+    <!-- The Wall -->
+    <script src="assets/wall.js" type="text/javascript" charset="utf-8"></script>
+    <script src="assets/javascript/01-wall.js" type="text/javascript" charset="utf-8"></script>
+  </head>
+
+  <body>
+    <div class="reveal">
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+        <section>
+          <h1>Breaking the 3DS</h1>
+          <p>
+            <small>
+              <!-- alphabetical order plz -->
+              By <a href="https://twitter.com/derrekr6">derrek</a>,
+              <a href="https://twitter.com/qlutoo">plutoo</a>,
+              <a href="https://twitter.com/smealum">smealum</a>
+            </small>
+          </p>
+        </section>
+        <section data-transition="convex">
+          <h2>Introduction</h2>
+        </section>
+        <section data-transition="fade">
+          <h1>Original 3DS</h1>
+          <p>
+            <img src="pic/3ds.png" width="30%" style="border: none; background-color: transparent;" align="left"/>
+            Released in 2011.
+            <ul>
+              <li>Stereoscopic "3D" display</li>
+              <li>CPU: 2x ARM11 MPCore (268MHz)</li>
+              <li>GPU: DMP PICA</li>
+              <li>RAM: 128MB FCRAM, 6MB VRAM</li>
+              <li>2nd CPU: ARM946</li>
+              <li>Backwards compatible with DS games</li>
+            </ul>
+          </p>
+        </section>
+        <section data-transition="fade">
+          <h1>New 3DS</h1>
+          <p>
+            <img src="pic/n3ds.png" width="25%" style="border: none; background-color: transparent;" align="left"/>
+            Released in <font color="red">2014/2015</font>.
+            <ul>
+              <li><font color="red">"Super Stable"</font> Stereoscopic "3D" display</li>
+              <li>CPU: <font color="red">4x</font> ARM11 MPCore (<font color="red">Up to 804MHz</font>)</li>
+              <li>GPU: DMP PICA</li>
+              <li>RAM: <font color="red">256MB</font> FCRAM, 6MB VRAM</li>
+              <li>2nd CPU: ARM946</li>
+              <li>Backwards compatible with DS games</li>
+            </ul>
+          </p>
+        </section>
+
+        <section data-transition="fade">
+          <h2>Hardware overview</h2>
+          <img src="pic/diag-overview.svg" style="border: none; background-color: transparent;" width="80%" height="80%"/>
+          <aside class="notes">
+            stuff
+          </aside>
+        </section>
+
+        <!-- arm11 overview -->
+
+        <section data-transition="fade">
+          <h2>Hardware overview</h2>
+          <img src="pic/diag-overview_arm11.svg" style="border: none; background-color: transparent;" width="80%" height="80%"/>
+        </section>
+
+        <section data-transition="fade">
+          <h2>ARM11 overview</h2>
+          <div style="background-image: url(pic/diag-arm11-0.svg); background-size: 150% auto; background-position: 65% 0%; height: 1000px; width: 1000px; border: none;"></div>
+        </section>
+        <section data-transition="fade">
+          <h2>ARM11 overview</h2>
+          <div style="background-image: url(pic/diag-arm11-1.svg); background-size: 150% auto; background-position: 65% 0%; height: 1000px; width: 1000px; border: none;"></div>
+        </section>
+        <section data-transition="fade">
+          <h2>ARM11 overview</h2>
+          <div style="background-image: url(pic/diag-arm11-2.svg); background-size: 150% auto; background-position: 65% 0%; height: 1000px; width: 1000px; border: none;"></div>
+        </section>
+        <section data-transition="fade">
+          <h2>ARM11 overview</h2>
+          <div style="background-image: url(pic/diag-arm11-3.svg); background-size: 150% auto; background-position: 65% 0%; height: 1000px; width: 1000px; border: none;"></div>
+        </section>
+
+        <!-- arm9 overview -->
+
+        <section data-transition="fade">
+          <h2>Hardware overview</h2>
+          <img src="pic/diag-overview_arm9.svg" style="border: none; background-color: transparent;" width="80%" height="80%"/>
+        </section>
+
+        <section data-transition="fade">
+          <h2>ARM9 overview</h2>
+          <div style="background-image: url(pic/diag-arm9-0.svg); background-size: 101% auto; background-position: 900% -50%; background-repeat: no-repeat; height: 1000px; width: 1000px; border: none;"></div>
+        </section>
+        <section data-transition="fade">
+          <h2>ARM9 overview</h2>
+          <div style="background-image: url(pic/diag-arm9-1.svg); background-size: 101% auto; background-position: 900% -50%; background-repeat: no-repeat; height: 1000px; width: 1000px; border: none;"></div>
+        </section>
+        <section data-transition="fade">
+          <h2>ARM9 overview</h2>
+          <div style="background-image: url(pic/diag-arm9-2.svg); background-size: 101% auto; background-position: 900% -50%; background-repeat: no-repeat; height: 1000px; width: 1000px; border: none;"></div>
+        </section>
+        <section data-transition="fade">
+          <h2>ARM9 overview</h2>
+          <div style="background-image: url(pic/diag-arm9-3.svg); background-size: 101% auto; background-position: 900% -50%; background-repeat: no-repeat; height: 1000px; width: 1000px; border: none;"></div>
+        </section>
+        <section data-transition="fade">
+          <h2>ARM9 overview</h2>
+          <div style="background-image: url(pic/diag-arm9-4.svg); background-size: 101% auto; background-position: 900% -50%; background-repeat: no-repeat; height: 1000px; width: 1000px; border: none;"></div>
+        </section>
+
+        <!-- security system overview -->
+
+        <section data-transition="fade">
+          <h2>Privilege levels (theory)</h2>
+          <img src="pic/diagram2_1.svg" style="border: none; background-color: transparent;" width="70%" height="70%"/>
+        </section>
+        <section data-transition="fade">
+          <h2>Privilege levels (reality)</h2>
+          svc 0x7B
+          <div style="overflow:auto; height=200; width=100%;">
+<pre style=''>
+<span style='color:teal; font-weight:bold; '>bic</span>     <span style='color:orange; font-weight:bold; '>r1</span><span style='color:#808030; '>,</span> <span style='color:orange; font-weight:bold; '>sp</span><span style='color:#808030; '>,</span> #<span style='color:#008c00; '>0xff</span>        <span style='color:#696969; '></span>
+<span style='color:teal; font-weight:bold; '>orr</span>     <span style='color:orange; font-weight:bold; '>r1</span><span style='color:#808030; '>,</span> <span style='color:orange; font-weight:bold; '>r1</span><span style='color:#808030; '>,</span> #<span style='color:#008c00; '>0xf00</span>       <span style='color:#696969; '></span>
+<span style='color:teal; font-weight:bold; '>add</span>     <span style='color:orange; font-weight:bold; '>r1</span><span style='color:#808030; '>,</span> <span style='color:orange; font-weight:bold; '>r1</span><span style='color:#808030; '>,</span> #<span style='color:#008c00; '>0x28</span>        <span style='color:#696969; '></span>
+<span style='color:teal; font-weight:bold; '>ldr</span>     <span style='color:orange; font-weight:bold; '>r2</span><span style='color:#808030; '>,</span> <span style='color:#808030; '>[</span><span style='color:orange; font-weight:bold; '>r1</span><span style='color:#808030; '>]</span>
+<span style='color:teal; font-weight:bold; '>stmdb</span>   <span style='color:orange; font-weight:bold; '>r2</span><span style='color:#808030; '>!</span><span style='color:#808030; '>,</span> <span style='color:#808030; '>{</span><span style='color:orange; font-weight:bold; '>sp</span><span style='color:#808030; '>,</span> <span style='color:orange; font-weight:bold; '>lr</span><span style='color:#808030; '>}</span>
+<span style='color:teal; font-weight:bold; '>mov</span>     <span style='color:orange; font-weight:bold; '>sp</span><span style='color:#808030; '>,</span> <span style='color:orange; font-weight:bold; '>r2</span>
+<span style='color:teal; font-weight:bold; '>blx</span>     <span style='color:orange; font-weight:bold; '>r0</span>
+<span style='color:teal; font-weight:bold; '>pop</span>     <span style='color:#808030; '>{</span><span style='color:orange; font-weight:bold; '>r0</span><span style='color:#808030; '>,</span> <span style='color:orange; font-weight:bold; '>r1</span><span style='color:#808030; '>}</span>
+<span style='color:teal; font-weight:bold; '>mov</span>     <span style='color:orange; font-weight:bold; '>sp</span><span style='color:#808030; '>,</span> <span style='color:orange; font-weight:bold; '>r0</span>
+<span style='color:teal; font-weight:bold; '>bx</span>      <span style='color:orange; font-weight:bold; '>r1</span>
+</pre></div>
+        </section>
+        <section data-transition="fade">
+          <h2>Privilege levels (theory)</h2>
+          <img src="pic/diagram2_1.svg" style="border: none; background-color: transparent;" width="70%" height="70%"/>
+        </section>
+        <section data-transition="fade">
+          <h2>Privilege levels (reality)</h2>
+          <img src="pic/diagram2_2.svg" style="border: none; background-color: transparent;" width="70%" height="70%"/>
+        </section>
+        <section>
+          <h2>Crypto</h2>
+
+          <ul>
+            <li class="fragment" data-fragment-index="1">Anything that can be signed is signed</li>
+            <li class="fragment" data-fragment-index="2">Anything that can be encrypted is encrypted</li>
+            <li class="fragment" data-fragment-index="3">Anything that can be made console/gamecard specific is
+              <ul>
+                <li>Internal NAND</li>
+                <li>All data stored on SD</li>
+                <li>Savegames, extdata</li>
+              </ul>
+            </li>
+            <li class="fragment" data-fragment-index="4">All of this is handled by the ARM9 with its secret keys</li>
+          </ul>
+        </section>
+
+        <!-- arm11 userland -->
+        <section data-transition="convex">
+          <h2>ARM11 Userland Exploitation</h2>
+        </section>
+
+        <section>
+          <h2>Entrypoint</h2>
+
+          <ul>
+            <li class="fragment" data-fragment-index="1">Strictly enforced Data Execution Prevention (DEP/NX)
+              <ul>
+                <li>Existing pages are either R, RW or RX</li>
+                <li>No way to reprotect or map new pages as RWX from userland</li>
+              </ul>
+            </li>
+            <li class="fragment" data-fragment-index="2">No ASLR
+              <br>
+              &rArr; savegame vulns are fair game
+            </li>
+            <li class="fragment" data-fragment-index="3">Encrypted and authenticated savegames
+              <br>
+              &rArr; savegame vulns are not great as initial entrypoints
+            </li>
+
+          </ul>
+        </section>
+
+        <section data-transition="fade">
+          <h2>Thankfully...</h2>
+
+          <table>
+            <tr>
+              <th width="45%" style="border:none;">
+                <!-- <div style="background-image: url(pic/webkit.png); background-color; white; background-size: 150% auto; background-position: 0% -20%; background-repeat: no-repeat; height: 1000px; position: relative; left: -50%; width: 200%; border: none; border: none;"></div> -->
+                <div style="background-image: url(pic/webkit.png); height: 1000px; position: relative; left: -5%; width: 2000px; border: none;" class="waaa"></div>
+              </th>
+            </tr>
+          </table>
+        </section>
+
+        <section data-transition="fade">
+          <h2>A wild webkit appears</h2>
+          <img src="pic/webkit.png" width="50%" style="border: none; background-color: transparent;" />
+        </section>
+
+        <section data-transition="fade">
+          <h2>Entrypoint</h2>
+
+          <img src="pic/webkit.png" style="border: none; background-color: transparent;" width="40%" align="left" />
+          <br>
+          <ul>
+            <li class="fragment" data-fragment-index="1">Webkit is used all over the place
+              <ul>
+                <li>Internet browser</li>
+                <li>Youtube application</li>
+                <li>Miiverse applet</li>
+                <li>...</li>
+              </ul>
+            </li>
+          </ul>
+          <ul>
+            <li class="fragment" data-fragment-index="2">Version in use is very old, with some patches</li>
+            <li class="fragment" data-fragment-index="3">Multiple bugs exploited by yellows8 and others</li>
+          </ul>
+        </section>
+
+        <section data-transition="fade">
+          <h2>Entrypoint</h2>
+
+          <table>
+            <tr>
+              <th width="45%" style="border:none;" class="fragment" data-fragment-index="1">
+                <img src="pic/N3DS_E_22528_9221.png" width="80%" style="border: none; background-color: transparent;" />
+              </th>
+              <th style="border:none;">
+                <img src="pic/cubicninja2.png" style="border: none; background-color: transparent;" />
+              </th>
+            </tr>
+          </table>
+          <ul>
+            <li class="fragment" data-fragment-index="1">Cubic Ninja uses QR code to share user-made levels</li>
+            <li class="fragment" data-fragment-index="2">It also fails hard at parsing those user-made levels</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Dealing with DEP</h2>
+          <ul>
+            <li class="fragment" data-fragment-index="1"><strong>Reminder</strong> : even with cubic ninja or webkit, we can't run our own code</li>
+            <li class="fragment" data-fragment-index="2"><strong>Obvious solution</strong> : ROP
+              <ul>
+                <li class="fragment" data-fragment-index="3">Build a fake stack that returns into code gadgets we need</li>
+                <li class="fragment" data-fragment-index="4">
+                  <div style="overflow:auto; height=200; width=100%; position:relative; top:-30px;">
+<pre style=''>
+.<span style='color:teal; font-weight:bold; '>word</span> ROP_POP_R0PC <span style='color:#a0a0a0; '>; pop {r0, pc}</span>
+.<span style='color:teal; font-weight:bold; '>word</span> <span style='color:orange; '>dst</span> <span style='color:#a0a0a0; '>; r0</span>
+.<span style='color:teal; font-weight:bold; '>word</span> ROP_POP_R1PC <span style='color:#a0a0a0; '>; pop {r1, pc}</span>
+.<span style='color:teal; font-weight:bold; '>word</span> <span style='color:orange; '>src</span> <span style='color:#a0a0a0; '>; r1</span>
+.<span style='color:teal; font-weight:bold; '>word</span> ROP_POP_R2R3R4R5R6PC <span style='color:#a0a0a0; '>; pop {r2, r3, r4, r5, r6, pc}</span>
+.<span style='color:teal; font-weight:bold; '>word</span> <span style='color:orange; '>size</span> <span style='color:#a0a0a0; '>; r2</span>
+.<span style='color:teal; font-weight:bold; '>word</span> <span style='color:#008000; '>0xDEADBABE</span> <span style='color:#a0a0a0; '>; r3 (garbage)</span>
+.<span style='color:teal; font-weight:bold; '>word</span> <span style='color:#008000; '>0xDEADBABE</span> <span style='color:#a0a0a0; '>; r4 (garbage)</span>
+.<span style='color:teal; font-weight:bold; '>word</span> <span style='color:#008000; '>0xDEADBABE</span> <span style='color:#a0a0a0; '>; r5 (garbage)</span>
+.<span style='color:teal; font-weight:bold; '>word</span> <span style='color:#008000; '>0xDEADBABE</span> <span style='color:#a0a0a0; '>; r6 (garbage)</span>
+.<span style='color:teal; font-weight:bold; '>word</span> MEMCPY
+</pre>
+                  </div>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Dealing with DEP</h2>
+          <ul>
+            <li class="fragment" data-fragment-index="1">ROP is annoying</li>
+            <li class="fragment" data-fragment-index="2"><strong>svcControlProcessMemory</strong> is not accessible from games/applications</li>
+            <li class="fragment" data-fragment-index="3">Dynamically linked libraries exist, but are signed</li>
+          </ul>
+        </section>
+
+        <section data-transition="fade">
+          <h2>GPU</h2>
+          <img src="pic/diag-overview_arm11.svg" style="border: none; background-color: transparent;" width="80%" height="80%"/>
+        </section>
+
+        <section data-transition="fade">
+          <h2>GPU</h2>
+          <div style="background-image: url(pic/diag-gpu-0.svg); background-size: 150% auto; background-position: 65% 0%; height: 1000px; width: 1000px; border: none;"></div>
+        </section>
+
+        <section data-transition="fade">
+          <h2>GPU</h2>
+          <div style="background-image: url(pic/diag-gpu-1.svg); background-size: 150% auto; background-position: 65% 0%; height: 1000px; width: 1000px; border: none;"></div>
+        </section>
+
+        <section data-transition="fade">
+          <h2>GPU</h2>
+          <div style="background-image: url(pic/diag-gpu-1.svg); background-size: 180% auto; background-position: 90% 90%; height: 1000px; width: 1000px; border: none;"></div>
+        </section>
+
+        <section data-transition="fade">
+          <h2>GPU</h2>
+          <div style="background-image: url(pic/diag-gpu-2.svg); background-size: 180% auto; background-position: 90% 90%; height: 1000px; width: 1000px; border: none;"></div>
+        </section>
+
+        <section>
+          <h2>gspwn</h2>
+          <ul>
+            <li class="fragment" data-fragment-index="1">We can use the GPU to directly access parts of physical memory</li>
+            <li class="fragment" data-fragment-index="2">The physical memory layout is completely deterministic</li>
+            <li class="fragment" data-fragment-index="3">We can overwrite application .text, get code execution despite DEP</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Sandbox</h2>
+          <ul>
+            <li class="fragment" data-fragment-index="1">We've bypassed DEP, but are limited to the current application's sandbox
+              <ul>
+                <li class="fragment" data-fragment-index="2">can only access its own savedata, likely can't access SD</li>
+                <li class="fragment" data-fragment-index="3">can only access its services and syscalls</li>
+                <li class="fragment" data-fragment-index="4">can't alter memory layout (number of executable pages...)</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <section data-transition="fade">
+          <h2>Sandbox escape</h2>
+          <div style="background-image: url(pic/diag-gpu-1.svg); background-size: 180% auto; background-position: 90% 90%; height: 1000px; width: 1000px; border: none;"></div>
+        </section>
+
+        <section data-transition="fade">
+          <h2>Sandbox escape</h2>
+          <div style="background-image: url(pic/diag-gpu-3.svg); background-size: 180% auto; background-position: 90% 90%; height: 1000px; width: 1000px; border: none;"></div>
+        </section>
+
+        <section>
+          <h2>Sandbox escape</h2>
+          <ul>
+            <li class="fragment" data-fragment-index="1">GPU can access most of the SYSTEM region which contains :
+              <ul>
+                <li class="fragment" data-fragment-index="2">home menu (applet, runs in background)</li>
+                <li class="fragment" data-fragment-index="3">internet browser (applet, can run in background)</li>
+                <li class="fragment" data-fragment-index="4">NS (system module, "Nintendo Shell")</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <section data-transition="fade">
+          <h2>Sandbox escape</h2>
+          <div style="background-image: url(pic/diag-system-0.svg); background-size: 180% auto; background-position: 90% 90%; height: 1000px; width: 1000px; border: none;"></div>
+        </section>
+
+        <section data-transition="fade">
+          <h2>Sandbox escape</h2>
+          <div style="background-image: url(pic/diag-system-1.svg); background-size: 180% auto; background-position: 90% 90%; height: 1000px; width: 1000px; border: none;"></div>
+        </section>
+
+        <section data-transition="fade">
+          <h2>Sandbox escape</h2>
+          <div style="background-image: url(pic/diag-system-2.svg); background-size: 180% auto; background-position: 90% 90%; height: 1000px; width: 1000px; border: none;"></div>
+        </section>
+
+        <section data-transition="fade">
+          <h2>Sandbox escape</h2>
+          <div style="background-image: url(pic/diag-system-3.svg); background-size: 180% auto; background-position: 90% 90%; height: 1000px; width: 1000px; border: none;"></div>
+        </section>
+
+        <section>
+          <h2>Sandbox escape</h2>
+          <ul>
+            <li class="fragment" data-fragment-index="1">The cutoff excluding the end of SYSTEM and all of BASE looks intentional
+              <ul>
+                <li class="fragment" data-fragment-index="2">Seems likely Nintendo knew about the possibility of misusing GPU DMA</li>
+                <li class="fragment" data-fragment-index="3">If so, they probably didn't realize the extent of the damage it can do</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <section data-transition="fade">
+          <h2>Sandbox escape</h2>
+          <div style="background-image: url(pic/diag-system-3.svg); background-size: 180% auto; background-position: 90% 90%; height: 1000px; width: 1000px; border: none;"></div>
+        </section>
+
+        <section>
+          <h2>Sandbox escape</h2>
+          <ul>
+            <li class="fragment" data-fragment-index="1">GPU can't access interesting code sections, but it can access menu's heaps</li>
+            <li class="fragment" data-fragment-index="2">Taking it over is just a matter of hijacking an object</li>
+            <div style="overflow:auto; height=200; width=100%; position:relative; top:-10px;" class="fragment" data-fragment-index="3">
+<pre style=''>
+<span style='color:#e34adc; '>object:</span>
+    .<span style='color:teal; font-weight:bold; '>word</span> OBJECT_LOC <span style='color:#808030; '>+</span> vtable <span style='color:#808030; '>-</span> object <span style='color:#a0a0a0; '>; pointer to manufactured vtable, and new sp</span>
+    .<span style='color:teal; font-weight:bold; '>word</span> ROP_POP_PC <span style='color:#a0a0a0; '>; pc (pop {pc} to jump to ROP)</span>
+
+    <span style='color:#e34adc; '>vtable:</span> <span style='color:#a0a0a0; '>; also initial ROP</span>
+    .<span style='color:teal; font-weight:bold; '>word</span> ROP_POP_R4R5PC <span style='color:#a0a0a0; '>; pop {r4, r5, pc} : skip pivot</span>
+    .<span style='color:teal; font-weight:bold; '>word</span> OBJECT_LOC <span style='color:#808030; '>+</span> ropload_stackpivot <span style='color:#808030; '>-</span> object <span style='color:#808030; '>+</span> <span style='color:#008000; '>0x1c</span> <span style='color:#a0a0a0; '>; r4</span>
+    .<span style='color:teal; font-weight:bold; '>word</span> ROP_STACK_PIVOT <span style='color:#a0a0a0; '>; stack pivot ; also r5 (garbage)</span>
+    <span style='color:#e34adc; '>rop:</span>
+    .<span style='color:teal; font-weight:bold; '>word</span> ROP_STACK_PIVOT <span style='color:#a0a0a0; '>; ldmdavc r4, {r4, r5, r8, sl, fp, ip, sp, pc}</span>
+
+    <span style='color:#e34adc; '>ropload_stackpivot:</span>
+    .<span style='color:teal; font-weight:bold; '>word</span> <span style='color:#008c00; '>0</span><span style='color:#808030; '>,</span> <span style='color:#008c00; '>0</span><span style='color:#808030; '>,</span> <span style='color:#008c00; '>0</span><span style='color:#808030; '>,</span> <span style='color:#008c00; '>0</span><span style='color:#808030; '>,</span> <span style='color:#008c00; '>0</span><span style='color:#808030; '>,</span> <span style='color:#008c00; '>0</span>
+    .<span style='color:teal; font-weight:bold; '>word</span> LOADEDROP_BUFADR <span style='color:#a0a0a0; '>; sp</span>
+    .<span style='color:teal; font-weight:bold; '>word</span> ROP_POP_PC <span style='color:#a0a0a0; '>; pc</span>
+</pre>
+            </div>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Sandbox escape</h2>
+          <ul>
+            <li class="fragment" data-fragment-index="1">Can't run code under home menu, but can ROP our way to success
+              <ul>
+                <li class="fragment" data-fragment-index="2">ns:s : power of life and death over processes</li>
+                <li class="fragment" data-fragment-index="3">Gives us SD access</li>
+                <li class="fragment" data-fragment-index="4">Lets us decrypt/dump any title</li>
+                <li class="fragment" data-fragment-index="5">Lets us access/overwrite all extdata</li>
+              </ul>
+            </li>
+            <li class="fragment" data-fragment-index="6">We use this as the base for running homebrew</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Homebrew launcher</h2>
+          <ul>
+            <li class="fragment" data-fragment-index="1">Run homebrew "service" in background under menu <span class="fragment" data-fragment-index="2">(written as ROP)</span></li>
+            <li class="fragment" data-fragment-index="3">"Service" handles running homebrew
+              <ol>
+                <li class="fragment" data-fragment-index="4">Kills current application</li>
+                <li class="fragment" data-fragment-index="5">Opens application with necessary permissions for target homebrew</li>
+                <li class="fragment" data-fragment-index="6">Takes over application using gspwn</li>
+                <li class="fragment" data-fragment-index="7">Sends some service handles to application (for SD access etc)</li>
+              </ol>
+            </li>
+            <li class="fragment" data-fragment-index="8">"Service" handles events (home button, power button...)</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Rom hacks</h2>
+          <ul>
+            <li class="fragment" data-fragment-index="1">We can run code under any app</li>
+            <li class="fragment" data-fragment-index="2">We can use this to modify commercial games !
+              <ol>
+                <li class="fragment" data-fragment-index="3">Launch app, take it over</li>
+                <li class="fragment" data-fragment-index="4">Load app's code onto heap</li>
+                <li class="fragment" data-fragment-index="5">Patch code
+                  <ul>
+                    <li>(we can patch it to redirect data reads to SD card)</li>
+                  </ul>
+                </li>
+                <li class="fragment" data-fragment-index="6">gspwn code and jump to it</li>
+              </ol>
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Secondary entrypoints</h2>
+          <ul>
+            <li class="fragment" data-fragment-index="1">We can run homebrew under any application <br>
+              <span class="fragment" data-fragment-index="2">&rArr; we can access any savegame</span>
+            </li>
+            <li class="fragment" data-fragment-index="3">We can use this to install more convenient secondary entrypoints</li>
+            
+          </ul>
+        </section>
+
+        <section>
+          <h2>Secondary entrypoints</h2>
+          <ul>
+            <li class="fragment" data-fragment-index="1"><strong>Menuhax</strong>, by yellows8 : exploits faulty theme handling code to run homebrew at startup</li>
+            <li class="fragment" data-fragment-index="2"><strong>Oot3dhax</strong>, by yellows8 : savegame exploit for "Ocarina of Time 3D"</li>
+            <li class="fragment" data-fragment-index="3"><strong>Ironhax</strong> : savegame exploit for "Ironfall : Invasion"</li>
+            <li class="fragment" data-fragment-index="4"><strong>...hax</strong> : savegame exploit for "..."</li>
+                                </ul>
+        </section>
+
+        <section>
+          <h2>What about NS ?</h2>
+          <ul>
+            <li class="fragment" data-fragment-index="1">NS is an attractive target
+              <ul>
+                <li class="fragment" data-fragment-index="2">Has am:u access, which lets us downgrade individual titles</li>
+                <li class="fragment" data-fragment-index="3">Has access to system module-specific system calls</li>
+                <li class="fragment" data-fragment-index="4">Is in a region we can partially mess with</li>
+              </ul>
+            </li>
+            <li class="fragment" data-fragment-index="5">All code and data it uses is beyond the cutoff</li>
+            <li class="fragment" data-fragment-index="6"><strong>What if we could move them to be below the cutoff ?</strong></li>
+          </ul>
+        </section>
+
+        <section data-transition="fade">
+          <h2>What about NS ?</h2>
+          Original layout
+          <div style="background-image: url(pic/diag-system-3.svg); background-size: 180% auto; background-position: 90% 90%; height: 1000px; width: 1000px; border: none;"></div>
+        </section>
+
+        <section data-transition="fade">
+          <h2>What about NS ?</h2>
+          Kill instance of NS
+          <div style="background-image: url(pic/diag-ns-0.svg); background-size: 180% auto; background-position: 90% 90%; height: 1000px; width: 1000px; border: none;"></div>
+        </section>
+
+        <section data-transition="fade">
+          <h2>What about NS ?</h2>
+          Allocate data in SYSTEM region from menu
+          <div style="background-image: url(pic/diag-ns-1.svg); background-size: 180% auto; background-position: 90% 90%; height: 1000px; width: 1000px; border: none;"></div>
+        </section>
+
+        <section data-transition="fade">
+          <h2>What about NS ?</h2>
+          Launch a new instance of NS
+          <div style="background-image: url(pic/diag-ns-2.svg); background-size: 180% auto; background-position: 90% 90%; height: 1000px; width: 1000px; border: none;"></div>
+        </section>
+
+        <section data-transition="fade">
+          <h2>What about NS ?</h2>
+          gspwn it
+          <div style="background-image: url(pic/diag-ns-2.svg); background-size: 180% auto; background-position: 90% 90%; height: 1000px; width: 1000px; border: none;"></div>
+        </section>
+
+        <section data-transition="fade">
+          <h2>What about NS ?</h2>
+          <ul>
+            <li class="fragment" data-fragment-index="1">Of course, that can't work
+              <ul>
+                <li class="fragment" data-fragment-index="2">We need NS to launch NS  :(</li>
+                <li class="fragment" data-fragment-index="3">We can't run multiple instances of the same title :(</li>
+              </ul>
+            </li>
+            <li class="fragment" data-fragment-index="4">Fortunately, the 3DS has a "safe" mode
+              <ul>
+                <li class="fragment" data-fragment-index="5">Most system titles have a SAFE_MODE counterpart with a different ID</li>
+                <li class="fragment" data-fragment-index="6">pm won't run a SAFE_MODE title if its normal version is already running</li>
+                <li class="fragment" data-fragment-index="7">But for some reason... <br>
+                  <div align="center"><img src="pic/sns.png" width="40%" /></div>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <section data-transition="fade">
+          <h2>What about NS ?</h2>
+          <ul>
+            <li>Of course, that can't work
+              <ul>
+                <li>We need NS to launch NS  :(</li>
+                <li>We can't run multiple instances of the same title :(</li>
+              </ul>
+            </li>
+            <li>Fortunately, the 3DS has a "safe" mode
+              <ul>
+                <li>Most system titles have a SAFE_MODE counterpart with a different ID</li>
+                <li>pm won't run a SAFE_MODE title if its normal version is already running</li>
+                <li>But for some reason... <br>
+                  <div align="center"><img src="pic/sns2.png" width="40%" /></div>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <section data-transition="fade">
+          <h2>snshax</h2>
+          Allocate buffer, launch New3DS Safe NS (sns), gspwn it
+          <div style="background-image: url(pic/diag-sns-0.svg); background-size: 180% auto; background-position: 90% 90%; height: 1000px; width: 1000px; border: none;"></div>
+        </section>
+
+        <section data-transition="fade">
+          <h2>snshax</h2>
+          <ul>
+            <li class="fragment" data-fragment-index="1">Gives us code execution under a system module !
+              <ul>
+                <li class="fragment" data-fragment-index="2">SVC 0x47, 0x48, 0x4A, 0x4B, 0x4C, 0x4D, 0x4E, 0x4F, 0x50, 0x51, 0x52, 0x53, 0x54, 0x55, 0x56, 0x57, 0x7C</li>
+                <li class="fragment" data-fragment-index="3">pm:app, ps:ps, am:u
+                  <ul>
+                    <li class="fragment" data-fragment-index="4"><b>Downgrades for all !</b></li>
+                  </ul>
+                </li>
+                <li class="fragment" data-fragment-index="5">Runs in background</li>
+              </ul>
+            </li>
+            <li class="fragment" data-fragment-index="6">N3DS-only</li>
+            <li class="fragment" data-fragment-index="7">For a similar userland privilege escalation attack, look up rohax</li>
+          </ul>
+        </section>
+
+        <!-- derrek's part ---------------------------------------------------------------------------------------------------------------------------------->
+        <section data-transition="convex">
+          <h2>ARM11 Kernel Exploitation</h2>
+        </section>
+        <section>
+          <h3>Kernel Overview</h3>
+          <p>
+            <ul style="font-size: 30px">
+              <li class="fragment" data-fragment-index="1">Nintendo's first gaming console kernel</li>
+              <li class="fragment" data-fragment-index="2">Multicore</li>
+              <li class="fragment" data-fragment-index="3">~<font color="yellow">130</font> SVCs (syscalls), ~50 available</li>
+              <li class="fragment" data-fragment-index="4">Internally based on C++ objects</li>
+              <pre class="fragment"; data-fragment-index="5"><code data-trim data-noescape style="font-size: 20px; line-height:96%;background-color: #000033;">
+SVC 0x15:  Result CreateSemaphore(Handle* semaphore, s32 initialCount, s32 maxCount)
+SVC 0x21:  Result CreateAddressArbiter(Handle* arbiter) 
+SVC 0x22:  Result ArbitrateAddress(Handle arbiter, ...)</code></pre>
+              <li class="fragment" data-fragment-index="6">Memory Allocators</li>
+              <ul style="font-size: 30px"><li class="fragment" data-fragment-index="6">Main memory (FCRAM)</li>
+                <li class="fragment" data-fragment-index="6">Slab Heap</li></ul>
+              <li class="fragment" data-fragment-index="7">IPC system</li>
+            </ul>
+          </p>
+        </section>
+        <section>
+          <h3>Security</h3>
+          <p>
+            <section>
+              <ul>
+                <li class="fragment" data-fragment-index="1">Little code <font color="green">✓</font></li>
+                <li class="fragment" data-fragment-index="2">No symbols <font color="green">✓</font></li>
+                <li class="fragment" data-fragment-index="3">Physically isolated in its own memory <font color="green">✓</font></li>
+                <li class="fragment" data-fragment-index="4">Objects with reference counting <font color="green">✓</font></li>
+                <li class="fragment" data-fragment-index="5">More than 100 panic() calls <font color="green">✓</font></li>
+                <li class="fragment" data-fragment-index="6">Syscall access restriction <font color="green">✓</font></li>
+                <li class="fragment" data-fragment-index="7">No KASLR, but changing vaddrs between kernel versions<font color="red">✕</font></li>
+                <li class="fragment" data-fragment-index="8">No Stack protection <font color="red">✕</font></li>
+                <li class="fragment" data-fragment-index="9">Userland is always mapped <font color="red">✕</font></li> 
+                <li class="fragment" data-fragment-index="10">Data Execution Prevention (NX) <font color="green">✓</font></li>
+              </ul>
+          </p>
+          <aside class="notes">
+            little code: ~1000 functions
+          </aside>
+          </section>
+          
+          <section data-transition="fade">
+            <h5>Taking a closer look ...</h5>
+            <pre style="line-height:80%";><code data-trim data-noescape class="no-highlight"; style="font-size: 20px;background-color: #00001a;">
+VA d8000000..d8600000 -> PA 18000000..18600000 [ XN ] [ Priv: RW, User: -- ]
+VA dff00000..e0000000 -> PA 1ff00000..20000000 [ XN ] [ Priv: RW, User: -- ]
+VA e0000000..e8000000 -> PA 20000000..28000000 [ XN ] [ Priv: RW, User: -- ]
+...
+<b style="color: orange">VA fff00000..fff20000 -> PA 1ff80000..1ffa0000 [  X ] [ Priv: R-, User: -- ]</b>
+<b style="color: orange">VA fff20000..fff2c000 -> PA 1ffde000..1ffea000 [  X ] [ Priv: R-, User: -- ]</b>
+...
+<b style="color: orange">VA ffff0000..ffff1000 -> PA 1fff4000..1fff5000 [  X ] [ Priv: R-, User: -- ]</b>
+            </code></pre>
+            <img src="pic/kern11_map1.svg" style="border: none"; width="100%"; height="100%"/>
+          </section>
+          <section data-transition="fade">
+            <h5>Taking a closer look ...</h5>
+            <pre style="line-height:80%";><code data-trim data-noescape class="no-highlight"; style="font-size: 20px;background-color: #00001a;">
+VA d8000000..d8600000 -> PA 18000000..18600000 [ XN ] [ Priv: RW, User: -- ]
+<b style="color: red">VA dff00000..e0000000 -> PA 1ff00000..20000000 [ XN ] [ Priv: RW, User: -- ]</b>
+VA e0000000..e8000000 -> PA 20000000..28000000 [ XN ] [ Priv: RW, User: -- ]
+...
+<b style="color: orange">VA fff00000..fff20000 -> PA 1ff80000..1ffa0000 [  X ] [ Priv: R-, User: -- ]</b>
+<b style="color: orange">VA fff20000..fff2c000 -> PA 1ffde000..1ffea000 [  X ] [ Priv: R-, User: -- ]</b>
+...
+<b style="color: orange">VA ffff0000..ffff1000 -> PA 1fff4000..1fff5000 [  X ] [ Priv: R-, User: -- ]</b>
+            </code></pre>
+            <img src="pic/kern11_map2.svg" style="border: none"; width="100%"; height="100%"/>
+          </section>
+          <section>
+            <ul>
+              <li>Little code<font color="green"> ✓</font></li>
+              <li>No symbols<font color="green"> ✓</font></li>
+              <li>Physically isolated in its own memory<font color="green"> ✓</font></li>
+              <li>Objects with reference counting<font color="green"> ✓</font></li>
+              <li>More than 100 panic() calls<font color="green"> ✓</font></li>
+              <li>Syscall access restriction<font color="green"> ✓</font></li>      
+              <li>No KASLR, but changing vaddrs between kernel versions<font color="red">✕</font></li>
+              <li>No Stack protection<font color="red"> ✕</font></li>
+              <li>Userland is always mapped<font color="red"> ✕</font></li>
+              <li>Data Execution Prevention (NX)<font color="red"> ✕</font>
+                <ul><li class="fragment"; style="color: yellow">   pretty useless.</li></ul></li>
+            </ul>
+          </section>
+        </section>
+
+        <section>
+          <h3>Security</h3>
+          <ul>
+            <br/>
+            <li class="fragment">To summarize:
+              <ul><li class="fragment"><font color="yellow">No Exploitation Protection.</font></li></ul></li>
+            <br/><br/><br/><br/><br/><br/><br/>
+            <li class="fragment">Let's find the needle in the haystack.</li>
+            <br/><br/>
+          </ul>
+        </section>
+
+        <section>
+          <section>
+            <h3>SVC Table</h3>
+            <ul>
+              <li class="fragment"><ul>Normal:
+                  <li>Local Memory Management</li>
+                  <li>Thread/Process Configuration</li>
+                  <li>Synchronization Objects Interface</li>
+                  <li>IPC Requesting</li>
+              </ul></li>
+          </section>
+          <section>
+            <ul>
+              <li>Normal</li>
+              <li><ul>Enhanced:
+                  <li>IPC Responding</li>
+                  <li>Kernel DMA</li>
+                  <li>Cache Control</li>
+              </ul></li>
+          </section>
+          <section>
+            <ul>
+              <li>Normal</li>
+              <li>Enhanced</li>
+              <li><ul>Debug:
+                  <li>Global Memory Management</li>
+                  <li>Global Thread/Process Configuration</li>
+                  <li>Breakpoints</li>
+                  <li>R/W Process Memory</li>
+              </ul></li>
+          </section>
+          <section>
+            <ul>
+              <li>Normal</li>
+              <li>Enhanced</li>
+              <li>Debug</li>
+              <li><ul>Privileged:
+                  <li>Process Creation</li>
+                  <li>Executable Memory Mapping</li>
+                  <li>Kernel State Changing</li>
+                  <li>SVC 0x7B</li>
+              </ul></li>
+            </ul>
+          </section>
+          
+          <section data-transition="fade">
+            <h3>SVC Table</h3>
+            <ul>
+              <li><ul>Normal:
+                  <li>Local Memory Management</li>
+                  <li>Thread/Process Configuration</li>
+                  <li>Synchronization Objects Interface</li>
+                  <li>IPC Requesting</li>
+                  <font color="gray">
+              </ul></li>
+              <li>Enhanced</li>
+              <li>Debug</li>
+              <li>Privileged</li>
+            </ul>
+            </font>
+          </section>
+          
+          <section data-transition="fade">
+            <h3>SVC Table</h3>
+            <ul>
+              <li><ul>Normal:
+                  <li>Local Memory Management</li>
+                  <li>Thread/Process Configuration</li>
+                  <li>Synchronization Objects Interface</li>
+                  <li>IPC Requesting      // full of panics</li>
+                  <font color="gray">
+              </ul></li>
+              <li>Enhanced</li>
+              <li>Debug</li>
+              <li>Privileged</li>
+            </ul>
+            </font>
+          </section>
+          <section data-transition="fade">
+            <h3>SVC Table</h3>
+            <ul>
+              <li><ul>Normal:
+                  <li>Local Memory Management</li>
+                  <li>Thread/Process Configuration      // not much to attack</li>
+                  <li>Synchronization Objects Interface    // not much to attack</li>
+                  <font color="gray">
+                    <li>IPC Requesting            // full of panics</li>
+              </ul></li>
+              <li>Enhanced</li>
+              <li>Debug</li>
+              <li>Privileged</li>
+            </ul>
+            </font>
+          </section>
+          <section data-transition="fade">
+            <h3>SVC Table</h3>
+            <ul>
+              <li><ul>Normal:
+                  <li><font color="yellow">Local Memory Management</font></li>
+                  <font color="gray">
+                    <li>Thread/Process Configuration      // not much to attack</li>
+                    <li>Synchronization Objects Interface    // not much to attack</li>
+                    <li>IPC Requesting            // full of panics</li>
+              </ul></li>
+              <li>Enhanced</li>
+              <li>Debug</li>
+              <li>Privileged</li>
+            </ul>
+            </font>
+            <ul>
+              <li class="fragment"><p>Much to mess up.</p></li>
+              <li class="fragment"><p>We have unchecked DMA access!</p></li>
+            </ul>
+          </section>
+          
+        </section>
+
+        <section>
+          <section data-transition="fade">
+            <h3>Memory Allocator</h3>
+            <ul>
+              <li class="fragment">Two allocator types
+                <ul>
+                  <li>Regular (Process Heap)</li>
+                  <li>Linear (GSP Heap)</li>
+                </ul>
+              </li>
+              <li class="fragment">FCRAM memory layout
+                <ul>
+                  <li>APP</li>
+                  <li>SYSTEM</li>
+                  <li>BASE</li>
+                  <img src="pic/FCRAM_regions.svg" style="border: none"; width="120%"; height="120%"/>
+                </ul>
+              </li>
+              <li class="fragment">Each region has its own set of free pages.</li>
+            </ul>
+          </section>
+          
+          <section data-transition="fade">
+            <h3>Memory Allocator</h3>
+            <ul style="font-size: 30px">
+              <li class="fragment">Region Descriptor
+                <ul>
+                  <li>Dimensions: Base address and size</li>
+                  <li>Pointer to first free piece of memory</li>
+                </ul>
+              </li>
+              <li class="fragment">Memchunk Header
+                <ul>
+                  <li>Describes a block of free FCRAM memory.</li>
+                  <li>Linked in a Doubly Linked List within the region.</li>
+                  <pre style="line-height:80%";><code style="background-color: #000033;">
+struct MemchunkHdr
+{
+    u32 size;       // in pages
+    MemchunkHdr *next;
+    MemchunkHdr *prev;
+}
+                  </pre></code>
+                </ul>
+              </li>
+            </ul>
+            <img class="fragment"; src="pic/kernel11_heap_cut.svg" style="border: none"; width="80%";/>
+          </section>
+          
+          <section data-transition="none">
+            <h3>Memory Allocator</h3>
+            <h4>Allocation</h4>
+            <img src="pic/kernel11_alloc1.svg" style="border: none"; width="70%";/>
+            <ul style="font-size: 28px">
+              <li class="fragment">Loads the next-free pointer from the Region Descriptor.</li>
+              <li class="fragment">Regular:<br/>Goes through the list, sums up their size.</li>
+              <br/><br/>
+              <br/>
+              <br/>
+              <br/>
+              <br/>
+            </ul>
+          </section>
+          
+          
+          <section data-transition="none">
+            <h3>Memory Allocator</h3>
+            <h4>Allocation</h4>
+            <img src="pic/kernel11_alloc2.svg" style="border: none"; width="70%";/>
+            <ul style="font-size: 28px">
+              <li>Loads the next-free pointer from the Region Descriptor.</li>
+              <li>Regular:<br/>Goes through the list, sums up their size.</li>
+              <br/><br/>
+              <br/>
+              <br/>
+              <br/>
+              <br/>
+            </ul>
+          </section>
+          
+          <section data-transition="none">
+            <h3>Memory Allocator</h3>
+            <h4>Allocation</h4>
+            <img src="pic/kernel11_alloc3.svg" style="border: none"; width="70%";/>
+            <ul style="font-size: 28px">
+              <li>Loads the next-free pointer from the Region Descriptor.</li>
+              <li>Regular:<br/>Goes through the list, sums up their size.</li>
+              <br/><br/>
+              <br/>
+              <br/>
+              <br/>
+              <br/>
+            </ul>
+          </section>
+          
+          <section data-transition="none">
+            <h3>Memory Allocator</h3>
+            <h4>Allocation</h4>
+            <img src="pic/kernel11_alloc4.svg" style="border: none"; width="70%";/>
+            <ul style="font-size: 28px">
+              <li>Loads the next-free pointer from the Region Descriptor.</li>
+              <li>Regular:<br/>Goes through the list, sums up their size.</li>
+              <li class="fragment">Linear:<br/>Looks for a suitable Memory Chunk.</li>
+              <li class="fragment">Found enough memory:
+                <ul>
+                  <br/>
+                  <br/>
+                  <br/>
+              </ul></li>
+            </ul>
+          </section>
+          
+          <section data-transition="none">
+            <h3>Memory Allocator</h3>
+            <h4>Allocation</h4>
+            <img src="pic/kernel11_alloc5.svg" style="border: none"; width="70%";/>
+            <ul style="font-size: 28px">
+              <li>Loads the next-free pointer from the Region Descriptor.</li>
+              <li>Regular:<br/>Goes through the list, sums up their size.</li>
+              <li>Linear:<br/>Looks for a suitable Memory Chunk.</li>
+              <li>Found enough memory:
+                <ul>
+                  <li>Sets the 'next' pointer of the last Memory Chunk to NULL.</li>
+                  <li class="fragment">Connects new ends of the List.</li>
+                  <li class="fragment">Returns a pointer to the first Memory Chunk.</li>
+              </ul></li>
+            </ul>
+          </section>
+          
+          <section  data-transition="none">
+            <h3>Memory Allocator</h3>
+            <h4>Security perspective</h4>
+            <ul>
+              <li class="fragment">Kernel structures inside the FCRAM!
+                <ul><li class="fragment"><font color="yellow">Violates the "isolated kernel" design.</font></li></ul></li>
+              <li class="fragment">The "old" attack "memchunkhax" by yellows8:
+                <ul>
+                  <li class="fragment">Overwrite Memchunk Headers using the GPU DMA flaw.</li>
+                  <li class="fragment">Gain an arbitrary kernel write.</li>
+                  <li class="fragment">Fixed with system update 9.3.0-21 in December 2014.</li>
+                  <li class="fragment">New Kernel: Now verifies every Memchunk Header.</li>
+                </ul>
+              </li>
+              <p style="font-size: 32px"; class="fragment">In Theory everything has been fixed, invalid ptrs &#10140; kernel-panic</p>
+            </ul>
+          </section>
+          
+          <section data-transition="none">
+            <h3>Memory Allocator</h3>
+            <h4>Security perspective</h4>
+            <ul>
+              <li>Kernel structures inside the FCRAM!
+                <ul><li><font color="yellow">Violates the "isolated kernel" design.</font></li></ul></li>
+              <li>The "old" attack "memchunkhax" by yellows8:
+                <ul>
+                  <li>Overwrite Memchunk Headers using the GPU DMA flaw.</li>
+                  <li>Gain an arbitrary kernel write.</li>
+                  <li>Fixed with system update 9.3.0-21 in December 2014.</li>
+                  <li>New Kernel: Now verifies every Memchunk Header.</li>
+                </ul>
+              </li>
+              <p style="font-size: 32px";><font color="yellow">In Theory</font> everything has been fixed, invalid ptrs &#10140; kernel-panic</p>
+            </ul>
+          </section>
+        </section>
+
+        <section data-transition="none">
+          <h3>SVC ControlMemory</h3>
+          <ul>
+            <li class="fragment">We have access to it.</li>
+            <li class="fragment">We can map/free RW pages, ...</li>
+            <li class="fragment">Takes an address, size, op as parameters.</li>
+            <li class="fragment">Does some basic checks.</li>
+            <li class="fragment">Eventually calls a large function.</li>
+          </ul>
+        </section>
+
+        <section data-transition="none">
+          <h3>kern::ControlMemory</h3>
+          <ul style="font-size: 32px";>
+            <p class="fragment">1. Calls the memory allocator function &#10140; MemchunkHdr ptr.</p>
+            <p class="fragment">2. Goes through the allocated Memory Chunks, maps them to userspace. Without any check.</p>
+            <p class="fragment">3. Adds Memory Block Information to KProcess.</p>
+            <br/>
+            <li class="fragment">Who guarantees that nothing changed between 1. and 2. ?</li>
+            <li class="fragment">Obviously a race condition.</li>
+            <li class="fragment">Exploitation using the GPU could be too slow.</li>
+            <li class="fragment">... That's not all.</li>
+          </ul>
+        </section>
+        <!--
+            <section data-transition="fade">
+              <h3>kern::ControlMemory</h3>
+              <pre style="line-height:90%";><font style="font-size: 22px";>// ...
+                  MemchunkHdr *memchunk;
+                  // Allocate memory
+                  memchunk = heap_alloc_regular(region_descriptor, usr_size);
+                  if(!memchunk) {
+                  // out of memory ...
+                  }
+                  /* Map and clear memory */
+                  do {
+                  u32 pages = memchunk->size;
+                  u32 paddr = memchunk + 0x40000000;  // convert vaddr -> paddr
+                  // map memchunk into userland
+                  if(mem_map(process, usr_vaddr, pages, paddr, access_rights)>>31) {
+                  // error ...
+                  }
+                  MemchunkHdr *current = memchunk;
+                  memchunk = memchunk->next;
+                  usr_vaddr += pages << 12;
+                                        memclear(current, pages << 12);  // clear mapped pages
+                                                                   } while(memchunk);
+                                                                   // ...</pre></font>
+                                                                   </section>
+            -->
+
+        <section data-transition="fade">
+          <h3>kern::ControlMemory</h3>
+          <h5>Allocate Memory</h5>
+          <pre style="line-height:90%";><font style="font-size: 22px";><code data-trim data-noescape class="no-highlight"; style="background-color: #000033;">
+// ...
+MemchunkHdr *memchunk;
+// Allocate memory
+memchunk = heap_alloc_regular(region_descriptor, usr_size);
+if(!memchunk) {
+    // out of memory ...
+}</font>
+</code></pre>
+        </section>
+
+        <section data-transition="fade">
+          <h3>kern::ControlMemory</h3>
+          <h5>Map it</h5>
+          <pre style="line-height:90%";><font style="font-size: 22px";><code data-trim data-noescape class="no-highlight"; style="background-color: #000033;">
+/* Map and clear memory */
+do {
+    u32 pages = memchunk-&gt;size;
+    u32 paddr = memchunk + 0x40000000;  // convert vaddr -&gt; paddr
+    // map memchunk into userland
+    if(mem_map(process, usr_vaddr, pages, paddr, access_rights)&gt;&gt;31) {
+        // error ...
+    }
+    MemchunkHdr *current = memchunk;
+    memchunk = memchunk-&gt;next;
+    usr_vaddr += pages &lt;&lt; 12;
+    memclear(current, pages &lt;&lt; 12);  // clear mapped pages
+}while(memchunk);
+// ...</font></pre></code>
+          <p class="fragment">What's wrong?</p>
+          <p><br/><br/></p>
+        </section>
+
+        <section data-transition="fade">
+          <h3>kern::ControlMemory</h3>
+          <h5>Map it</h5>
+          <pre style="line-height:90%";><font style="font-size: 22px";><code data-trim data-noescape class="no-highlight"; style="background-color: #000033;">/* Map and clear memory */
+do {
+    u32 pages = memchunk-&gt;size;
+    u32 paddr = memchunk + 0x40000000;  // convert vaddr -&gt; paddr
+    // map memchunk into userland
+    if(<font color="red">mem_map(process, usr_vaddr, pages, paddr, access_rights)</font>&gt;&gt;31) {
+        // error ...
+    }
+    MemchunkHdr *current = memchunk;
+    <font color="red">memchunk = memchunk-&gt;next;</font>
+    usr_vaddr += pages &lt;&lt; 12;
+    memclear(current, pages &lt;&lt; 12);  // clear mapped pages
+} while(memchunk);
+// ...</font></pre></code>
+          <p>What's wrong?</p>
+          <p class="fragment"><font color="yellow">They're reading from the memchunk after it has already been mapped in userspace!</font></p>
+        </section>
+
+
+        <section>
+          <h2>Exploitation</h2>
+          <ul style="font-size: 32px";>
+            <li class="fragment">Ultimate goal: map kernel pages to userspace.</li>
+            <img class="fragment" src="pic/kernel11_heap_patched.svg" style="border: none; background-color: #013;" width="100%"; height="100%"/>
+            <i><li class="fragment">On the other hand...</li></i>
+            <ul>
+              <li class="fragment">It requires perfect timing.<pre style="line-height:90%";><font style="font-size: 22px";><code data-trim data-noescape class="no-highlight"; style="background-color: #000033;">
+if(<font color="red">mem_map(process, usr_vaddr, pages, paddr, access_rights)</font>&gt;&gt;31) {
+    // error ...
+}
+MemchunkHdr *current = memchunk;
+<font color="red">memchunk = memchunk-&gt;next;</font></font>
+              </pre></code></li>
+              <li class="fragment">We need a MemchunkHdr structure at the next ptr's address.</li>
+              <img class="fragment" src="pic/kernel11_heap_patched_map.svg" style="border: none; background-color: #013;" width="100%"; height="100%"/>
+            </ul>
+          </ul>
+        </section>
+
+        <section>
+          <h3>The KAddressArbiter oracle</h3>
+          <ul>
+            <code data-trim data-noescape class="fragment" style="font-size: 23px; line-height:96%;background-color: #000033;">SVC 0x22:  Result ArbitrateAddress(Handle arbiter, u32 addr, ...)</code>
+            <br/><br/>
+            <li class="fragment">Actually used for Thread Synchronization.</li>
+            <li class="fragment">Tries to read from 'addr'.</li>
+            <li class="fragment">Returns an error if 'addr' is not user-accessible.</li>
+          </ul>
+        </section>
+
+        <section data-transition="fade">
+          <h3>Data injection</h3>
+          <p class="fragment">Let's use the SlabHeap. Because...</p>
+          <ul>
+            <li class="fragment">we can create KObjects easily.
+              <ul>
+                <li class="fragment">Set their member variables.</li>
+                <li class="fragment">Create a bunch of them.</li>
+            </ul></li>
+          </ul>
+        </section>
+
+        <section data-transition="fade">
+          <h3>SlabHeap</h3>
+          <img src="pic/slabheap1.svg" style="border: none; background-color: #013;" width="50%"; height="50%"/>
+        </section>
+
+        <section data-transition="fade">
+          <h3>Slap the Heap</h3>
+          <img src="pic/slabheap2.svg" style="border: none; background-color: #013;" width="50%"; height="50%"/>
+          <p class="fragment">...we can overwrite vtable pointers.</p>
+        </section>
+
+
+        <section>
+          <h3>Summary</h3>
+          <ul>
+            <li class="fragment">1. Setup some KObjects</li>
+            <li class="fragment">2. Request Memory</li>
+            <li class="fragment">3. Once that memory becomes available, patch the next-ptr.</li>
+            <li class="fragment">4. Overwrite mapped SlabHeap pages.</li>
+            <li class="fragment">5. Call svcCloseHandle to deallocate all KObjects.</li>
+          </ul>
+        </section>
+
+
+        <section data-transition="fade">
+          <img src="pic/lv0.svg" style="border: none; background-color: #013;" width="50%"; height="50%"/>
+          <h3>ARM11 Code Execution</h3>
+        </section>
+
+        <!-- plutoo's part ---------------------------------------------------------------------------------------------------------------------------------->
+        <section data-transition="convex">
+          <h2>ARM9 Exploitation</h2>
+        </section>
+
+        <section>
+          <h2>ARM9</h2>
+          <p>
+            <ul>
+              <li class="fragment" data-fragment-index="1">
+                Reusing the ARM9 for backwards compatibility for NDS as an IO bridge/security processor.
+              </li>
+              <li class="fragment" data-fragment-index="2">
+                Running a stripped down version of ARM11 kernel.
+              </li>
+              <li class="fragment" data-fragment-index="3">
+                No MMU (everything is identity-mapped).
+              </li>
+              <li class="fragment" data-fragment-index="5">
+                .data+stack is executable..
+              </li>
+              <li class="fragment" data-fragment-index="6">
+                .text is writable..
+              </li>
+            </ul>
+          </p>
+        </section>
+
+        <section>
+          <h2>Exploiting ARM9</h2>
+          <p>
+            <ul style="list-style-type:none">
+              <li class="fragment" data-fragment-index="1">
+                There are three areas with memory-mapped IO:
+              </li>
+              <li style="padding-left: 50px">
+                <ul>
+                  <li class="fragment" data-fragment-index="2"><font color="teal">0x10000000+</font>: ARM9-only IO</li>
+                  <li class="fragment" data-fragment-index="3"><font color="teal">0x10100000+</font>: ARM9/ARM11 Shared IO</li>
+                  <li class="fragment" data-fragment-index="4"><font color="teal">0x10200000+</font>: ARM11-only IO</li>
+                </ul>
+              </li>
+              <li>
+                &nbsp;
+              </li>
+              <li class="fragment" data-fragment-index="5">
+                We have full ARM11 control.
+              </li>
+              <li class="fragment" data-fragment-index="6">
+                <b>Can we use the shared IO somehow to pwn ARM9?</b>
+              </li>
+            </ul>
+            <br />
+          </p>
+        </section>
+        <section>
+          <h2>NTRCARD</h2>
+          <p>
+            <ul>
+              <li class="fragment" data-fragment-index="1">The interface for reading DS cartridges lies in the shared IO region.</li>
+              <li class="fragment" data-fragment-index="2">A read operation starts by writing the CTRL register:</li>
+            </ul>
+            <pre class="fragment" data-fragment-index="3">
+              <font color="teal">LDR</font>        R0, =0x10164000
+              ...
+              <font color="teal">LDR</font>        R2, =0x883F1FFF <font color="#0F0">; *NTRCARD_ROMCTRL = \</font>
+              <font color="teal">LSLS</font>       R1, R6, #0x1D   <font color="#0F0">;   0x883F1FFF | ((R6&7)&lt;&lt24);</font>
+              <font color="teal">LSRS</font>       R1, R1, #5
+              <font color="teal">ADDS</font>       R1, R1, R2
+              <font color="teal">STR</font>        R1, [R0,#4]     <font color="#0F0">; This initiates a 0x200-byte transfer</font>
+            </pre>
+          </p>
+        </section>
+        <section>
+          <h2>NTRCARD</h2>
+          <p>
+            ... and then a read loop:
+            <pre>
+              ...
+              <font color="orange">loop:</font> <font color="teal">LDR</font>        R3, [R0,#4]     <font color="#0F0">; do {</font>
+              <font color="teal">LSLS</font>       R3, R3, #8
+              <font color="teal">BPL</font>        <font color="orange">loop</font>            <font color="#0F0">;     while(*NTRCARD_CTRL & ~READY);</font>
+              <font color="teal">LDR</font>        R0, [R0,#0x1C]
+              <font color="teal">LSLS</font>       R3, R1, #2
+              <font color="teal">ADDS</font>       R1, R1, #1
+              <font color="teal">STR</font>        R0, [R2,R3]     <font color="#0F0">;     buf[i++] = *NTRCARD_IN;</font>
+              <font color="teal">LDR</font>        R0, =0x10164000 <font class="fragment" data-fragment-index="1" color="red">;     ^ No range check</font>
+              <font color="teal">LDR</font>        R3, [R0,#4]
+              <font color="teal">CMP</font>        R3, #0
+              <font color="teal">BLT</font>        <font color="orange">loop</font>            <font color="#0F0">; } while(*NTRCARD_CTRL & BUSY);</font>
+              ...
+            </pre>
+          </p>
+        </section>
+        <section>
+          <h2>Vulnerability</h2>
+          <p>
+            So to summarize:
+            <ul>
+              <li class="fragment" data-fragment-index="1">ARM9 asks for a 0x200 byte transfer.</li>
+              <li class="fragment" data-fragment-index="3"><font color="red">ARM11 overwrites the register, asking for 0x4000 bytes.</font></li>
+              <li class="fragment" data-fragment-index="2">ARM9 reads into a buffer until HW says it's finished.</li>
+              <li class="fragment" data-fragment-index="4"><font color="red">Boom!</font></li>
+            </ul>
+          </p>
+        </section>
+        <section>
+          <h1>ntrcardhax</h1>
+          <p class="fragment" data-fragment-index="1">
+            We have a nice buffer overrun.
+          </p>
+          <p class="fragment" data-fragment-index="2">
+            Can we control the data?
+          </p>
+          <p class="fragment" data-fragment-index="3">
+            The data comes from the DS cartridge slot.
+          </p>
+          <p class="fragment" data-fragment-index="4">
+            <b>We need to make our own DS cartridge.</b>
+          </p>
+        </section>
+        <section>
+          <img src="pic/passme.png" align="left" style="position:relative; left:100px; border: none; background-color: transparent;" class="fragment" data-fragment-index="1" />
+          <img src="pic/fpga.png" align="right" width="40%" style="position:relative; left:-130px; border: none; background-color: transparent;" class="fragment" data-fragment-index="3" />
+          <br>
+          <br>
+          <h2 style="vertical-align: middle; position:relative; left:20px;" class="fragment" data-fragment-index="2">
+            + 
+          </h2>
+          <br>
+          <br>
+          <br>
+        </section>
+        <section data-transition="fade">
+          <img src="pic/working_cmd9F.JPG" style="border: none; background-color: #013;" />
+        </section>
+        <section data-transition="fade">
+          <img src="pic/working_cmd9F_2.JPG" style="border: none; background-color: #013;" />
+        </section>
+        <section>
+          <img src="pic/passme.png" align="left" style="position:relative; left:100px; border: none; background-color: transparent;" />
+          <img src="pic/fpga.png" align="right" width="40%" style="position:relative; left:-130px; border: none; background-color: transparent;" />
+          <br>
+          <br>
+          <h2 style="vertical-align: middle; position:relative; left:20px;">
+            + 
+          </h2>
+          <br>
+          <br>
+          <br>
+          <p class="fragment" data-fragment-index="1">
+            This gives us ARM9 code execution, but...
+          </p>
+          <p class="fragment" data-fragment-index="2">
+            <b>We want something better.</b>
+          </p>
+        </section>
+        <!-- arm9loaderhax -->
+        <section data-transition="fade">
+          <h3>Chain of trust (Old3DS)</h3>
+          <img src="pic/Old3DS_BootChain.svg" style="border: none; background-color: #013;" />
+        </section>
+        <section data-transition="fade">
+          <h3>Chain of trust (New3DS)</h3>
+          <img src="pic/New3DS_BootChain.svg" style="border: none; background-color: #013;" />
+        </section>
+        <section>
+          <h3>arm9loader - Theory</h3>
+          <ul>
+            <li class="fragment" data-fragment-index="1">Additional crypto-layer introduced with New3DS.</li>
+            <li class="fragment" data-fragment-index="2">Loads new keys from a special NAND-sector.</li>
+            <br />
+            <li class="fragment" data-fragment-index="3">Keys are encrypted with a per-console key calculated based on OTP.</li>
+            <li class="fragment" data-fragment-index="4">OTP access is disabled forever after arm9loader.</li>
+            <br />
+            <li class="fragment" data-fragment-index="5">Looks safe.</li>
+          </ul>
+        </section>
+        <section>
+          <h4>arm9loader - Implementation</h4>
+          <ol>
+            <li class="fragment" data-fragment-index="1">Calculate SHA256 hash of OTP.</li>
+            <li class="fragment" data-fragment-index="2">Read the key-sector from NAND.</li>
+            <li class="fragment" data-fragment-index="3">Decrypt the first key using the OTP hash and put it in keyslot 0x11.</li>
+            <li class="fragment" data-fragment-index="4">Use the 0x11-key to generate a bunch of keys.</li>
+            <li class="fragment" data-fragment-index="5">Verify the 0x11-key by encrypting a fixed test-vector.</li>
+            <li class="fragment" data-fragment-index="6">Decrypt ARM9 binary. <div class="fragment" data-fragment-index="8" style="color:#f00;">They forgot to "clear" keyslot 0x11 here.</div></li>
+            <li class="fragment" data-fragment-index="7">Jump to entrypoint.</li>
+            <p class="fragment" data-fragment-index="9"><b>Once we have ARM9 code-execution, we can just regenerate all keys by using keyslot 0x11.</b></p>
+          </ol>
+        </section>
+        <section>
+          <h4>arm9loader - Implementation 2.0</h4>
+          <ol>
+            <li class="fragment" data-fragment-index="1">Calculate SHA256 hash of OTP.</li>
+            <li class="fragment" data-fragment-index="2">Read the key-sector from NAND.</li>
+            <li class="fragment" data-fragment-index="3">Generate all the previous keys, for compatibility.</li>
+            <li class="fragment" data-fragment-index="4">Decrypt key #2 from NAND.</li>
+            <li class="fragment" data-fragment-index="5">Decrypt ARM9 binary using key #2.</li>
+            <div class="fragment" data-fragment-index="8" style="color:#f00;">They forgot to verify key #2 by a fixed test-vector.</div>
+            <li class="fragment" data-fragment-index="6">Clear keyslot 0x11.</li>
+            <li class="fragment" data-fragment-index="7">Jump to entrypoint.</li>
+            <p class="fragment" data-fragment-index="9"><b>EPIC FAIL</b></p>
+          </ol>
+        </section>
+        <section>
+          <h2>arm9loaderhax</h2>
+          <p class="fragment" data-fragment-index="1">We can change the key #2 in NAND.</p>
+          <p class="fragment" data-fragment-index="2">arm9loader will decrypt the ARM9 binary to garbage..</p>
+          <p class="fragment" data-fragment-index="3"><b>.. and jump to it.</b></p>
+        </section>
+        <section>
+          <h4>Infinite monkeys..</h4>
+          <img src="pic/arm_branch.png" style="width: 75%;"/>
+          <p class="fragment" data-fragment-index="1">If we try a lot of key #2's...</p>
+          <p class="fragment" data-fragment-index="2"><b>.. eventually we'll find some garbage that decodes to a branch-instruction.</b></p>
+        </section>
+        <!-- Key dumping by soft-rebooting -->
+        <!--
+            <section data-transition="fade">
+              <img src="pic/nand_unmodified.svg" style="border: none; background-color: #013;" />
+              <img src="pic/arm9mem_firm0.svg" style="border: none; background-color: #013;" />
+              <p>Get ARM9 code execution by other means.</p>
+            </section>
+            <section data-transition="fade">
+              <img src="pic/nand_unmodified.svg" style="border: none; background-color: #013;" />
+              <img src="pic/arm9mem_branchspray.svg" style="border: none; background-color: #013;" />
+              <p>Put payload into mem, and fill rest with branch instructions.</p>
+            </section>
+            <section data-transition="fade">
+              <img src="pic/nand_corruptedkey.svg" style="border: none; background-color: #013;" />
+              <img src="pic/arm9mem_branchspray.svg" style="border: none; background-color: #013;" />
+              <p>Write a random key to the New3DS keysector.</p>
+            </section>
+            <section data-transition="fade">
+              <img src="pic/nand_corruptedkey.svg" style="border: none; background-color: #013;" />
+              <img src="pic/arm9mem_branchspray.svg" style="border: none; background-color: #013;" />
+              <p>Perform a soft-reboot.</p>
+            </section>
+            <section data-transition="fade">
+              <img src="pic/nand_corruptedkey.svg" style="border: none; background-color: #013;" />
+              <img src="pic/arm9mem_branchspray_reboot.svg" style="border: none; background-color: #013;" />
+              <p>Bootrom will load firm0 into memory.</p>
+            </section>
+            <section data-transition="fade">
+              <img src="pic/nand_corruptedkey.svg" style="border: none; background-color: #013;" />
+              <img src="pic/arm9mem_branchspray_reboot_a9ldrdecrypt.svg" style="border: none; background-color: #013;" />
+              <p>arm9loader will decrypt the ARM9 binary to garbage.</p>
+            </section>
+            -->
+        <!-- Persistent arm9loaderhax. -->
+        <section data-transition="fade">
+          <img src="pic/nand_unmodified.svg" style="border: none; background-color: #013;" />
+          <img src="pic/arm9mem_uninited.svg" style="border: none; background-color: #013;" />
+          <p>&nbsp;</p>
+        </section>
+        <section data-transition="fade">
+          <img src="pic/nand_corruptedkey.svg" style="border: none; background-color: #013;" />
+          <img src="pic/arm9mem_uninited.svg" style="border: none; background-color: #013;" />
+          <p>We install our key #2 onto the NAND key sector.</p>
+        </section>
+        <section data-transition="fade">
+          <img src="pic/nand_corruptedkey.svg" style="border: none; background-color: #013;" />
+          <img src="pic/arm9mem_uninited.svg" style="border: none; background-color: #013;" />
+          <p>We install the largest firm binary we have on firm0.</p>
+        </section>
+        <section data-transition="fade">
+          <img src="pic/nand_firm0payload.svg" style="border: none; background-color: #013;" />
+          <img src="pic/arm9mem_uninited.svg" style="border: none; background-color: #013;" />
+          <p>We put our payload on top of firm0.</p>
+        </section>
+        <section data-transition="fade">
+          <b>We reboot, and..</b>
+        </section>
+        <section data-transition="fade">
+          <img src="pic/nand_firm0payload.svg" style="border: none; background-color: #013;" />
+          <img src="pic/arm9mem_uninited.svg" style="border: none; background-color: #013;" />
+          <p>ARM9 bootrom is executed.</p>
+        </section>
+        <section data-transition="fade">
+          <img src="pic/nand_firm0payload.svg" style="border: none; background-color: #013;" />
+          <img src="pic/arm9mem_firm0_enc.svg" style="border: none; background-color: #013;" />
+          <p>Bootrom loads firm0 into arm9mem.</p>
+        </section>
+        <section data-transition="fade">
+          <img src="pic/nand_firm0payload.svg" style="border: none; background-color: #013;" />
+          <img src="pic/arm9mem_firm0_dechaxx.svg" style="border: none; background-color: #013;" />
+          <p>Bootrom decrypts it.</p>
+        </section>
+        <section data-transition="fade">
+          <img src="pic/nand_firm0payload.svg" style="border: none; background-color: #013;" />
+          <img src="pic/arm9mem_firm0_dechaxx.svg" style="border: none; background-color: #013;" />
+          <p>Bootrom hash-check fails.</p>
+        </section>
+        <section data-transition="fade">
+          <img src="pic/nand_firm0payload.svg" style="border: none; background-color: #013;" />
+          <img src="pic/arm9mem_firm1_enc.svg" style="border: none; background-color: #013;" />
+          <p>Bootrom loads (smaller) firm1 on top.</p>
+        </section>
+        <section data-transition="fade">
+          <img src="pic/nand_firm0payload.svg" style="border: none; background-color: #013;" />
+          <img src="pic/arm9mem_firm1_dec.svg" style="border: none; background-color: #013;" />
+          <p>Bootrom decrypts it.</p>
+        </section>
+        <section data-transition="fade">
+          <img src="pic/nand_firm0payload.svg" style="border: none; background-color: #013;" />
+          <img src="pic/arm9mem_firm1_dec_jump.svg" style="border: none; background-color: #013;" />
+          <p>Since firm1 is valid, bootrom will jump to it.</p>
+        </section>
+        <section data-transition="fade">
+          <img src="pic/nand_firm0payload.svg" style="border: none; background-color: #013;" />
+          <img src="pic/arm9mem_firm1_dec_jump_garbage.svg" style="border: none; background-color: #013;" />
+          <p>arm9loader will decrypt using our supplied key.</p>
+        </section>
+        <section data-transition="fade">
+          <img src="pic/nand_firm0payload.svg" style="border: none; background-color: #013;" />
+          <img src="pic/arm9mem_firm1_dec_jump_garbage_jump.svg" style="border: none; background-color: #013;" />
+          <p>arm9loader jumps to garbage.</p>
+        </section>
+        <section data-transition="fade">
+          <img src="pic/nand_firm0payload.svg" style="border: none; background-color: #013;" />
+          <img src="pic/arm9mem_firm1_dec_jump_garbage_jumpjump.svg" style="border: none; background-color: #013;" />
+          <p>garbage jumps to our code.</p>
+        </section>
+        <section data-transition="fade">
+          <h2>Summary</h2>
+          This gives us:<br/>
+          <p class="fragment" data-fragment-index="1">ARM9 code-execution.. <font color="green">✓</font></p>
+          <p class="fragment" data-fragment-index="2">.. from cold boot <font color="green">✓</font></p>
+          <p class="fragment" data-fragment-index="3">.. early. <font color="green">✓</font></p>
+          <p class="fragment" data-fragment-index="4">Gives us 6.x save-key and 7.x NCCH-key.<font color="green">✓</font></p>
+        </section>
+
+        <!-- keyscrambler -->
+        <section data-transition="convex">
+          <h1>AES Engine</h1>
+        </section>
+        <section>
+          <h2>AES Engine</h2>
+          <ul>
+            <li class="fragment" data-fragment-index="1">The ARM9 has a hardware AES crypto engine, used a lot.</li>
+            <!--
+                <li class="fragment" data-fragment-index="2">It supports all standard blockcipher modes: CBC/ECB/CTR/CCM.</li>
+            <li class="fragment" data-fragment-index="3">There are 64 keyslots that can be configured.</li>
+            <br />
+            -->
+            <li class="fragment" data-fragment-index="2">Two security features:</li>
+            <p class="fragment" data-fragment-index="3"><b>Write-only keys:</b> A key written to a keyslot cannot be read back</p>
+            <p class="fragment" data-fragment-index="4"><b>Keyscrambler:</b> The actual key used is calculated in hardware and never exposed to the CPU</p>
+          </ul>
+        </section>
+        <section>
+          <h2>Keyscrambler</h2>
+          <ul>
+            <li class="fragment" data-fragment-index="1">Two 128-bit keys called <span style='color:orange; font-weight:bold; '>keyX</span> and <span style='color:teal; font-weight:bold; '>keyY</span>.</li>
+            <li class="fragment" data-fragment-index="2">The actual AES key is derived as follows:</li>
+            <pre class="fragment" data-fragment-index="2"><span style='color:green; font-weight:bold; '>normal_key</span> = F(<span style='color:orange; font-weight:bold; '>keyX</span>, <span style='color:teal; font-weight:bold; '>keyY</span>)</pre>
+            <li class="fragment" data-fragment-index="3">.. where <code>F</code> is an unknown function implemented in hardware.</li>
+            <br />
+            <li class="fragment" data-fragment-index="4">Even if we know <span style='color:orange; font-weight:bold; '>keyX</span> and <span style='color:teal; font-weight:bold; '>keyY</span>, we can't figure out the <span style='color:green; font-weight:bold; '>normal key</span>.</li>
+            <li class="fragment" data-fragment-index="5">We must ask the 3DS to decrypt/encrypt things for us. :(</li>
+          </ul>
+        </section>
+        <section>
+          <h2>Poking</h2>
+          <ul>
+            <li class="fragment" data-fragment-index="1">
+              By poking the AES engine, we notice:
+              <br />
+              <p align="center">
+                <code>
+                  encrypt(zeroes, <span style='color:orange; font-weight:bold; '>keyX</span>=1 &lt;&lt; n, <span style='color:teal; font-weight:bold; '>keyY</span>=0) <br/>
+                  == <br/>
+                  encrypt(zeroes, <span style='color:orange; font-weight:bold; '>keyX</span>=0, <span style='color:teal; font-weight:bold; '>keyY</span>=1 &lt;&lt; (n+2))
+                </code>
+              </p>
+            </li>
+            <br />
+            <li class="fragment" data-fragment-index="2">
+              In general, we find that we can write:
+              <br />
+              <p align="center">
+                <code> F(<span style='color:orange; font-weight:bold; '>x</span>, <span style='color:teal; font-weight:bold; '>y</span>) = G( (<span style='color:orange; font-weight:bold; '>x</span> <<< 2) ^ <span style='color:teal; font-weight:bold; '>y</span> ) </code>
+                                                                                                                                                                                                           <br />
+                                                                                                                                                                                                           <br />
+                                                                                                                                                                                                           where <code>G(t)</code> is an unknown function implemented in hardware.
+              </p>
+              <br/>
+            </li>
+            <br />
+            <li class="fragment" data-fragment-index="3">
+              And then we got stuck..
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h2>Wait a minute..</h2>
+          <ul>
+            <li class="fragment" data-fragment-index="1">The keyscrambler is used for (among other things):</li>
+            <ul>
+              <li class="fragment" data-fragment-index="2">Mii QR-codes</li>
+              <li class="fragment" data-fragment-index="3">UDS network protocol</li>
+              <li class="fragment" data-fragment-index="4">3DS Download Play</li>
+            </ul>
+            <br />
+            <li class="fragment" data-fragment-index="5">Wii U also supports all these, but it doesn't have the keyscrambler..</li>
+            <br />
+            <li  class="fragment" data-fragment-index="6">The Wii U must be using <span style='color:green; font-weight:bold; '>normal keys</span>..</li>
+          </ul>
+        </section>
+        <section>
+          <h3>Keys shared between<br />Wii U &lt;-&gt; 3DS</h3>
+          <ul>
+            <table class="fragment" data-fragment-index="1">
+              <br />
+              <tr>
+                <td>Name</td>
+                <td>Keyslot</td>
+                <td><span style='color:orange; font-weight:bold; '>KeyX</span> set by</td>
+                <td><span style='color:teal; font-weight:bold; '>KeyY</span> set by</td>
+              </tr>
+              <tr>
+                <td>UDS</td>
+                <td>0x2D</td>
+                <td><font color="red">Bootrom</font></td>
+                <td><font color="red">Bootrom</font></td>
+              </tr>
+              <tr>
+                <td>Mii QR-codes</td>
+                <td>0x31</td>
+                <td><font color="red">Bootrom</font></td>
+                <td><font color="green">Firmware</font></td>
+              </tr>
+              <tr>
+                <td>DLP</td>
+                <td>0x39</td>
+                <td><font color="red">Bootrom</font></td>
+                <td><font color="green">Firmware</font></td>
+              </tr>
+            </table>
+            <br />
+            <li class="fragment" data-fragment-index="2">We can't read any keys set by the bootrom.</li>
+          </ul>
+        </section>
+        <section>
+          <h4>Can we figure out G(t)?</h4>
+          <ul>
+            <li class="fragment" data-fragment-index="0">Thanks shuffle2 (and team fail0verflow) for helping us extract the Wii U keys!</li>
+            <br />
+            <li class="fragment" data-fragment-index="1">
+              We now have a <span style='color:teal; font-weight:bold; '>keyY</span> and its corresponding <span style='color:green; font-weight:bold; '>normal key</span>
+              <br />(<span style='color:orange; font-weight:bold; '>keyX</span> still unknown).
+            </li>
+            <br />
+            <li class="fragment" data-fragment-index="2">If G(t) is "bad", then a small change in <span style='color:teal; font-weight:bold; '>keyY</span> will only lead to a small change in the <span style='color:green; font-weight:bold; '>normal key</span>.</li>
+            <br />
+            <li class="fragment" data-fragment-index="5"><b>Spoiler</b>: G(t) is "bad"</li>
+          </ul>
+        </section>
+        <section>
+          <h2>Staring at the data</h2>
+          <ul>
+            <li class="fragment" data-fragment-index="1">One bit in <span style='color:teal; font-weight:bold; '>keyY</span> is flipped => One or two bits in the <span style='color:green; font-weight:bold; '>normal key</span> are flipped at a position moved left by 87 or 88, but never 86.</li>
+                                                                                                                                                                                                           <li class="fragment" data-fragment-index="2">Looks like an adder maybe?</li>
+            <li class="fragment" data-fragment-index="3">Let's try <code>G(t) = (t + C) <<< 87</code>, then:</li>
+                                                                                            <p align="center">
+                                                                                              <code class="fragment" data-fragment-index="3">F(<span style='color:orange; font-weight:bold; '>x</span>, <span style='color:teal; font-weight:bold; '>y</span>) = (((<span style='color:orange; font-weight:bold; '>x</span> <<< 2) ^ <span style='color:teal; font-weight:bold; '>y</span>) + C) <<< 87 </code>
+                                                                                                                                                                                                                                                                                                                                                                                                     </p>
+            <li class="fragment" data-fragment-index="4">We don't know <span style='color:orange; font-weight:bold; '>keyX</span> because it's set by bootrom.</li>
+            <li class="fragment" data-fragment-index="5">We don't know the constant <code>C</code> because it's set in silicon.</li>
+          </ul>
+        </section>
+        <section>
+          <h2>Bit by bit..</h2>
+          <ul>
+            <li class="fragment" data-fragment-index="1">We take our formula:</li>
+            <p align="center">
+              <code class="fragment" data-fragment-index="2"><span style='color:green; font-weight:bold; '>normal_key</span> = (((<span style='color:orange; font-weight:bold; '>x</span> <<< 2) ^ <span style='color:teal; font-weight:bold; '>y</span>) + C) <<< 87</code>
+                                                                                                                                                                                                                                                                   </p>
+            <br />
+            <li class="fragment" data-fragment-index="3">.. and consider the inequality:</li>
+            <p align="center">
+              <code class="fragment" data-fragment-index="4">(<span style='color:green; font-weight:bold; '>normal_key0</span> >>> 87) &lt; (<span style='color:green; font-weight:bold; '>normal_key1</span> >>> 87)</code><br />
+              <code class="fragment" data-fragment-index="5">((<span style='color:orange; font-weight:bold; '>x</span> <<< 2) ^ <span style='color:teal; font-weight:bold; '>y0</span>) + C &lt; ((<span style='color:orange; font-weight:bold; '>x</span> <<< 2) ^ <span style='color:teal; font-weight:bold; '>y1</span>) + C</code><br />
+                                                                                                                                                                                                                                                               <code class="fragment" data-fragment-index="6">(<span style='color:orange; font-weight:bold; '>x</span> <<< 2) ^ <span style='color:teal; font-weight:bold; '>y0</span> &lt; (<span style='color:orange; font-weight:bold; '>x</span> <<< 2) ^ <span style='color:teal; font-weight:bold; '>y1</span></code><br />
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         </p>
+            <li class="fragment" data-fragment-index="7">If y0 and y1 are equal except one bit, the XOR is smallest for the y which has the same bit as x.</li>
+          </ul>
+        </section>
+        <section>
+          <h3>Solving for <span style='color:orange; font-weight:bold; '>keyX</span> and C</h3>
+          <ul>
+            <li class="fragment" data-fragment-index="1">Perform the calculation for all 128 <span style='color:teal; font-weight:bold; '>keyY</span> bitflips, and you have recovered all 128 bits of <span style='color:orange; font-weight:bold; '>keyX</span>.</li>
+            <li class="fragment" data-fragment-index="2">When you know <span style='color:orange; font-weight:bold; '>keyX</span>, you can calculate <code>C</code>.</li>
+            <br />
+            <li class="fragment" data-fragment-index="3">End result:</li>
+            <ol>
+              <li class="fragment" data-fragment-index="3">Keyscrambler broken <font color="green">✓</font></li>
+              <li class="fragment" data-fragment-index="4">Bootrom <span style='color:orange; font-weight:bold; '>keyX</span> for keyslots 0x30-0x33, 0x38-0x3B <font color="green">✓</font></li>
+            </ol>
+          </ul>
+        </section>
+        <!--
+            <section>
+              <h3>Weak keyscrambler is weak</h3>
+              <ul>
+                <li class="fragment" data-fragment-index="1">Since the keyscrambler doesn't scramble very well.. We can bruteforce any <span style='color:orange; font-weight:bold; '>keyX</span> in ~2^65 instead of 2^128:</li>
+                <br />
+                <ol>
+                  <li class="fragment" data-fragment-index="2">Encrypt zeroes with all possible keys with upper 64 byte being zero (on a PC). <b>~2^64</b></li>
+                  <li class="fragment" data-fragment-index="3">Encrypt zeroes with all possible <span style='color:teal; font-weight:bold; '>keyYs</span> only affecting the region being zero in the <span style='color:green; font-weight:bold; '>normal key</span> (on a 3DS). <b>~2^64</b></li>
+                  <li class="fragment" data-fragment-index="4">With high probability, one PC-key will collide with one 3DS-key.</li>
+                  <li class="fragment" data-fragment-index="5">From there, it's trivial to calculate the <span style='color:orange; font-weight:bold; '>keyX</span>.</li>
+                </ol>
+              </ul>
+            </section>
+            <section>
+              <h3>Weak keyscrambler is weak</h3>
+              <ul>
+                <li class="fragment" data-fragment-index="1">The keyscrambler can inject arbitrary XOR-diffs into unknown keys for us.</li>
+                <li class="fragment" data-fragment-index="2">If there is an related-key attack on AES-128, it can be applied to the 3DS to extract <span style='color:orange; font-weight:bold; '>keyX</span>'s.</li>
+                <li class="fragment" data-fragment-index="3">Today there is no such attack on AES-128, but there is on AES-192 and AES-256.</li>
+              </ul>
+            </section>
+            -->
+        <section>
+          <h2>NFC Fail</h2>
+          <ul>
+            <li class="fragment" data-fragment-index="1">Firmware version 8.1 was rushed for the upcoming New3DS release.</li>
+            <li class="fragment" data-fragment-index="2">It included an early version of NFC crypto, later replaced.</li>
+            <br />
+            <li class="fragment" data-fragment-index="3">Firmware 8.1+ uses an AES <span style='color:green; font-weight:bold; '>normal key</span>.</li>
+            <li class="fragment" data-fragment-index="4">Firmware 9.3+ uses an hardcoded <span style='color:teal; font-weight:bold; '>keyY</span>.</li>
+            <br />
+            <li class="fragment" data-fragment-index="5"><b>They accidentally gave us a (<span style='color:teal; font-weight:bold; '>keyY</span>, <span style='color:green; font-weight:bold; '>normal key</span>) pair in their firmware images..</b></li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Takeaways</h2>
+          <ul>
+            <li class="fragment" data-fragment-index="1">Giving access to physical memory is dangerous, even if you think you've protected the sensitive stuff</li>
+            <li class="fragment" data-fragment-index="2">Shared IO is dangerous</li>
+            <li class="fragment" data-fragment-index="3">Only checking your data before decryption is a bad idea</li>
+            <li class="fragment" data-fragment-index="4">Secrets hidden in hardware are great, unless you leak them</li>
+          </ul>
+        </section>
+
+        <section>
+          "I think we may have reached the point where homebrew on closed game consoles is no longer appealing." <br>
+          - fail0verflow at 30c3
+        </section>
+
+        <section>
+          <h1>We disagree.</h1>
+        </section>
+
+        <section>
+          <!-- wall of homebrew screenshots -->
+          <div style="height: 1000px; position: relative; left: -50%; width: 200%; border: none;" class="waaa">
+            <div id="wall"></div>
+          </div>
+        </section>
+
+        <section>
+          <h2>There's still a lot to do</h2>
+          <ul>
+            <li class="fragment" data-fragment-index="1">ctrulib and assorted tools are maturing nicely, but could always use help</li>
+            <li class="fragment" data-fragment-index="2">Developers, developers, developers
+              <ul>
+                <li class="fragment" data-fragment-index="3">Making games is fun !</li>
+                <li class="fragment" data-fragment-index="4">Reverse engineering proprietary hardware is fun !</li>
+                <li class="fragment" data-fragment-index="5">Reverse engineering proprietary software is fun !</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>One more thing...</h2>
+
+          <img src="pic/browser_icon.png" style="border: none; background-color: transparent;" width="5%" height="5%" class="fragment" data-fragment-index="1" />
+          <img src="pic/if_icon.png" style="border: none; background-color: transparent;" width="5%" height="5%" class="fragment" data-fragment-index="2" />
+          <img src="pic/menu_icon.png" style="border: none; background-color: transparent;" width="5%" height="5%" class="fragment" data-fragment-index="3" />
+
+        </section>
+
+        <section>
+          <h4>Thanks to yellows8</h4>
+          <h4>Thanks to everyone on #3dsdev</h4>
+          <a href="https://twitter.com/derrekr6">@derrekr6</a>, <a href="https://twitter.com/qlutoo">@qlutoo</a>, <a href="https://twitter.com/smealum">@smealum</a> <br>
+          <a href="https://3dbrew.org">3dbrew.org</a> <br>
+          <a href="https://smealum.github.io/3ds">smealum.github.io/3ds</a>
+        </section>
+
+        <section>
+          <h2>Questions ?</h2>
+          <a href="https://twitter.com/derrekr6">@derrekr6</a>, <a href="https://twitter.com/qlutoo">@qlutoo</a>, <a href="https://twitter.com/smealum">@smealum</a> <br>
+          <a href="https://3dbrew.org">3dbrew.org</a> <br>
+          <a href="https://smealum.github.io/3ds">smealum.github.io/3ds</a>
+        </section>
+
+      </div>
+    </div>
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+    <script>
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+      controls: true,
+      progress: true,
+      history: true,
+      center: true,
+
+      transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+      // Optional reveal.js plugins
+      dependencies: [
+      { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+      { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+      { src: 'plugin/zoom-js/zoom.js', async: true },
+      { src: 'plugin/notes/notes.js', async: true }
+      ]
+      });
+    </script>
+  </body>
+</html>

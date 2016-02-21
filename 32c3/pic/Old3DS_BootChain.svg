@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="449.70865"
+   height="314.27557"
+   viewBox="0 0 449.70854 314.27552"
+   id="svg14283"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="Old3DS_BootChain.svg">
+  <defs
+     id="defs14285">
+    <marker
+       inkscape:stockid="Arrow1Mend"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="marker15876"
+       style="overflow:visible;"
+       inkscape:isstock="true">
+      <path
+         id="path15878"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#ffffff;stroke-width:1pt;stroke-opacity:1;fill:#ffffff;fill-opacity:1"
+         transform="scale(0.4) rotate(180) translate(10,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Mend"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow1Mend"
+       style="overflow:visible;"
+       inkscape:isstock="true">
+      <path
+         id="path4229"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#ffffff;stroke-width:1pt;stroke-opacity:1;fill:#ffffff;fill-opacity:1"
+         transform="scale(0.4) rotate(180) translate(10,0)" />
+    </marker>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.4"
+     inkscape:cx="237.87493"
+     inkscape:cy="144.98999"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     units="px"
+     inkscape:window-width="1920"
+     inkscape:window-height="1147"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata14288">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-738.09145)">
+    <rect
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#00ba77;stroke-width:1.55950916;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:6.23803712, 12.47607425;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect5158"
+       width="431.68707"
+       height="120.27259"
+       x="1.4646767"
+       y="883.69183" />
+    <rect
+       style="fill:#f14277;fill-opacity:1"
+       id="rect4136"
+       width="155.56349"
+       height="59.598999"
+       x="33.044437"
+       y="797.49481" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;line-height:125%;font-family:'Open Sans', sans-serif;-inkscape-font-specification:'Open Sans, sans-serif';text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="107.74515"
+       y="820.87048"
+       id="text4138"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4140"
+         x="107.74515"
+         y="820.87048"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.25px;font-family:'Open Sans', sans-serif;-inkscape-font-specification:'Open Sans, sans-serif Bold'">Boot9</tspan><tspan
+         sodipodi:role="line"
+         x="107.74515"
+         y="837.3053"
+         id="tspan4142"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.5px;font-family:'Open Sans', sans-serif;-inkscape-font-specification:'Open Sans, sans-serif'">(bootrom)</tspan></text>
+    <rect
+       style="fill:#00ba77;fill-opacity:1"
+       id="rect4136-1"
+       width="155.56349"
+       height="89.327599"
+       x="33.197441"
+       y="902.65082" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;line-height:125%;font-family:'Open Sans', sans-serif;-inkscape-font-specification:'Open Sans, sans-serif';text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="107.8575"
+       y="921.84369"
+       id="text4138-4"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4140-7"
+         x="107.8575"
+         y="921.84369"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.25px;font-family:'Open Sans', sans-serif;-inkscape-font-specification:'Open Sans, sans-serif Bold'">Kernel9</tspan><tspan
+         sodipodi:role="line"
+         x="107.8575"
+         y="942.15619"
+         id="tspan4142-8"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16.25px;font-family:'Open Sans', sans-serif;-inkscape-font-specification:'Open Sans, sans-serif'" /></text>
+    <rect
+       style="fill:#f14277;fill-opacity:1"
+       id="rect4136-9"
+       width="155.56349"
+       height="58.588844"
+       x="238.89218"
+       y="797.98218" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;line-height:125%;font-family:'Open Sans', sans-serif;-inkscape-font-specification:'Open Sans, sans-serif';text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="315.59286"
+       y="820.3476"
+       id="text4138-8"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4140-3"
+         x="315.59286"
+         y="820.3476"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.25px;font-family:'Open Sans', sans-serif;-inkscape-font-specification:'Open Sans, sans-serif Bold'">Boot11</tspan><tspan
+         sodipodi:role="line"
+         x="315.59286"
+         y="836.78241"
+         id="tspan4142-9"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.5px;font-family:'Open Sans', sans-serif;-inkscape-font-specification:'Open Sans, sans-serif'">(bootrom)</tspan></text>
+    <rect
+       style="fill:#00ba77;fill-opacity:1"
+       id="rect4136-1-9"
+       width="164.65486"
+       height="91.817078"
+       x="236.06549"
+       y="900.96252" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20.13991928px;line-height:125%;font-family:'Open Sans', sans-serif;-inkscape-font-specification:'Open Sans, sans-serif';text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="316.86157"
+       y="928.27094"
+       id="text4138-4-9"
+       sodipodi:linespacing="125%"
+       transform="scale(1.006996,0.9930526)"><tspan
+         sodipodi:role="line"
+         id="tspan4140-7-1"
+         x="316.86157"
+         y="928.27094"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.25px;font-family:'Open Sans', sans-serif;-inkscape-font-specification:'Open Sans, sans-serif Bold'">Kernel11</tspan><tspan
+         sodipodi:role="line"
+         x="316.86157"
+         y="948.58344"
+         id="tspan4142-8-3"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16.25px;font-family:'Open Sans', sans-serif;-inkscape-font-specification:'Open Sans, sans-serif'" /></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:20px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';letter-spacing:0px;word-spacing:0px;fill:#cacaca;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="76.541916"
+       y="786.20038"
+       id="text4934"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4936"
+         x="76.541916"
+         y="786.20038"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';fill:#cacaca;fill-opacity:1">ARM9</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:20px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';letter-spacing:0px;word-spacing:0px;fill:#cacaca;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="281.37949"
+       y="787.16992"
+       id="text4938"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4940"
+         x="281.37949"
+         y="787.16992"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';fill:#cacaca;fill-opacity:1">ARM11</tspan></text>
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#edcf00;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:12, 12;stroke-dashoffset:0;stroke-opacity:1"
+       d="M 13.288711,850.64106 443.5931,851.15324 Z"
+       id="path5036"
+       inkscape:connector-curvature="0" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#edcf00;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="401.14047"
+       y="845.57062"
+       id="text5038"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan5040"
+         x="401.14047"
+         y="845.57062"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16.25px;font-family:'Open Sans', sans-serif;-inkscape-font-specification:'Open Sans, sans-serif';fill:#edcf00;fill-opacity:1">RSA</tspan></text>
+    <rect
+       style="fill:#009277;fill-opacity:1"
+       id="rect4136-1-4"
+       width="147.48227"
+       height="59.713268"
+       x="37.03207"
+       y="929.255" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;line-height:125%;font-family:'Open Sans', sans-serif;-inkscape-font-specification:'Open Sans, sans-serif';text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="110.68198"
+       y="957.59198"
+       id="text4138-4-8"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4140-7-2"
+         x="110.68198"
+         y="957.59198"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.25px;font-family:'Open Sans', sans-serif;-inkscape-font-specification:'Open Sans, sans-serif Bold'">Process9</tspan><tspan
+         sodipodi:role="line"
+         x="110.68198"
+         y="977.90448"
+         id="tspan4142-8-2"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16.25px;font-family:'Open Sans', sans-serif;-inkscape-font-specification:'Open Sans, sans-serif'" /></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:12.5px;line-height:125%;font-family:sans-serif;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#00ba77;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="4.0550508"
+       y="897.44843"
+       id="text6605"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="4.0550508"
+         y="897.44843"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.5px;font-family:'Open Sans', sans-serif;-inkscape-font-specification:'Open Sans, sans-serif';text-align:start;text-anchor:start;fill:#00ba77;fill-opacity:1"
+         id="tspan6729">Firmware binary</tspan></text>
+    <rect
+       style="fill:#008b77;fill-opacity:1"
+       id="rect4136-1-9-4"
+       width="158.00221"
+       height="61.154881"
+       x="239.21588"
+       y="928.38605" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:41.82649231px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="316.82956"
+       y="953.99152"
+       id="text6898"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan6900"
+         x="316.82956"
+         y="953.99152"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.99201202px;font-family:'Open Sans', sans-serif;-inkscape-font-specification:'Open Sans, sans-serif Bold';text-align:center;text-anchor:middle;fill:#ffffff;fill-opacity:1">Firm Processes</tspan><tspan
+         sodipodi:role="line"
+         x="316.82956"
+         y="971.17676"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.07077885px;font-family:'Open Sans', sans-serif;-inkscape-font-specification:'Open Sans, sans-serif';text-align:center;text-anchor:middle;fill:#ffffff;fill-opacity:1"
+         id="tspan6906">pm, loader, sm, pxi, fs</tspan></text>
+    <path
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#ffffff;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate;marker-end:url(#marker15876)"
+       d="m 110.86355,857.09381 0.0571,45.55701"
+       id="path9350"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0"
+       inkscape:connection-start="#rect4136"
+       inkscape:connection-end="#rect4136-1" />
+    <path
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#ffffff;stroke-width:2.4999994;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate;marker-end:url(#Arrow1Mend)"
+       d="m 317.09499,856.57102 0.63806,44.3915"
+       id="path9352"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0"
+       inkscape:connection-start="#rect4136-9"
+       inkscape:connection-end="#rect4136-1-9" />
+  </g>
+</svg>

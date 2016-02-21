@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="161.82671mm"
+   height="40.294727mm"
+   viewBox="0 0 573.40171 142.77659"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="kern11_map2.svg">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.979899"
+     inkscape:cx="284.78869"
+     inkscape:cy="38.921025"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1428"
+     inkscape:window-height="755"
+     inkscape:window-x="268"
+     inkscape:window-y="117"
+     inkscape:window-maximized="0"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Ebene 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-40,-280.93362)">
+    <rect
+       style="fill:#009dcc;fill-opacity:1"
+       id="rect4136"
+       width="573.40173"
+       height="88.571419"
+       x="40"
+       y="280.93362" />
+    <rect
+       style="fill:#0074a3;fill-opacity:1"
+       id="rect4147-3"
+       width="183.57138"
+       height="79.285721"
+       x="44.642876"
+       y="285.57651" />
+    <rect
+       style="fill:#00acb0;fill-opacity:1"
+       id="rect4138"
+       width="172.14285"
+       height="68.571449"
+       x="49.285713"
+       y="291.64792" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:28.5933094px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#e6e6e6;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="55.238811"
+       y="352.33261"
+       id="text4140"
+       sodipodi:linespacing="125%"
+       transform="scale(1.0488161,0.95345601)"><tspan
+         sodipodi:role="line"
+         id="tspan4142"
+         x="55.238811"
+         y="352.33261">AXI WRAM</tspan></text>
+    <rect
+       style="fill:#0074a3;fill-opacity:1"
+       id="rect4147"
+       width="367.14282"
+       height="79.285721"
+       x="240.71429"
+       y="285.21933" />
+    <rect
+       style="fill:#ffc845;fill-opacity:1"
+       id="rect4144"
+       width="117.74693"
+       height="68.571434"
+       x="484.94058"
+       y="290.93365"
+       ry="0" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:11.15126324px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ececec;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="56.169109"
+       y="349.60248"
+       id="text4152"
+       sodipodi:linespacing="125%"
+       transform="scale(0.97913319,1.0213115)"><tspan
+         sodipodi:role="line"
+         id="tspan4154"
+         x="56.169109"
+         y="349.60248">PA 0x1ff80000 - 0x20000000</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:28.51121521px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#e6e6e6;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="501.47379"
+       y="340.43411"
+       id="text4158"
+       sodipodi:linespacing="125%"
+       transform="scale(1.0177804,0.98253022)"><tspan
+         sodipodi:role="line"
+         id="tspan4160"
+         x="501.47379"
+         y="340.43411">.text</tspan></text>
+    <path
+       style="fill:#ffc845;fill-opacity:1"
+       inkscape:transform-center-x="-0.25155771"
+       inkscape:transform-center-y="-1.4410282"
+       d="m 554.92073,369.7083 0.0498,27.65475 -427.72165,-0.0406 c -0.12296,-8.27831 -0.0342,-8.37613 -0.23429,-16.85343 l -9.9119,-0.0922 15.63004,-10.6685 15.76461,10.81504 -9.81218,0.0406 -0.16235,10.62825 401.7329,0.002 -0.0453,-21.38258 z"
+       id="path4169"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccccccccccc" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:39.52988434px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffc845;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="296.87"
+       y="425.13986"
+       id="text4172"
+       sodipodi:linespacing="125%"
+       transform="scale(1.0033741,0.99663723)"><tspan
+         sodipodi:role="line"
+         id="tspan4174"
+         x="296.87"
+         y="425.13986"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Consolas;-inkscape-font-specification:'Consolas Bold';fill:#ffc845;fill-opacity:1">R<tspan
+   style="fill:#ff0000"
+   id="tspan4240">W</tspan>X</tspan></text>
+    <rect
+       style="fill:#ff3b2a;fill-opacity:1"
+       id="rect4138-8"
+       width="172.14285"
+       height="68.571449"
+       x="247.37788"
+       y="290.42953" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:28.5933094px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#e6e6e6;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="243.83548"
+       y="351.51865"
+       id="text4140-6"
+       sodipodi:linespacing="125%"
+       transform="scale(1.0488161,0.953456)"><tspan
+         sodipodi:role="line"
+         id="tspan4142-0"
+         x="243.83548"
+         y="351.51865">AXI WRAM</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:11.15126324px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ececec;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="258.4635"
+       y="348.30719"
+       id="text4152-4"
+       sodipodi:linespacing="125%"
+       transform="scale(0.9791332,1.0213115)"><tspan
+         sodipodi:role="line"
+         id="tspan4154-5"
+         x="258.4635"
+         y="348.30719">VA 0xdff80000 - 0xe0000000</tspan></text>
+    <path
+       style="fill:#ff3b2a;fill-opacity:1"
+       inkscape:transform-center-x="-0.12386448"
+       inkscape:transform-center-y="-1.4410282"
+       d="m 341.86818,369.91869 -0.0386,27.40221 -214.55198,-0.16687 c -0.0605,-8.27831 -0.08,-8.06046 -0.17851,-16.53776 l -9.99516,-0.21847 15.58906,-10.79476 15.78158,10.9413 -9.8829,0.0406 0.0463,9.74437 195.88195,0.12827 -0.0223,-20.4987 z"
+       id="path4169-2"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccccccccccc" />
+  </g>
+</svg>

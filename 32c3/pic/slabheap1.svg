@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="301.42856"
+   height="312.14285"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="slabheap1.svg">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.4"
+     inkscape:cx="138.67339"
+     inkscape:cy="156.67034"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="959"
+     inkscape:window-height="744"
+     inkscape:window-x="65"
+     inkscape:window-y="24"
+     inkscape:window-maximized="1"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-108.57143,-268.79077)">
+    <rect
+       style="fill:#000080"
+       id="rect2985"
+       width="301.42856"
+       height="312.14285"
+       x="108.57143"
+       y="268.79077" />
+    <rect
+       style="fill:#0000ff"
+       id="rect3122"
+       width="273.57141"
+       height="274.28571"
+       x="122.14286"
+       y="305.93362" />
+    <rect
+       style="fill:#008080"
+       id="rect2987"
+       width="263.57147"
+       height="72.85714"
+       x="125.71429"
+       y="313.07648" />
+    <rect
+       style="fill:#008000"
+       id="rect2989"
+       width="117.14286"
+       height="29.285715"
+       x="129.28572"
+       y="317.36218" />
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="133.57143"
+       y="341.64789"
+       id="text2991"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan2993"
+         x="133.57143"
+         y="341.64789"
+         style="font-size:22px;fill:#cccccc">vtable ptr</tspan></text>
+    <rect
+       style="fill:#666666"
+       id="rect2999"
+       width="116.42857"
+       height="28.571428"
+       x="130"
+       y="352.36218" />
+    <rect
+       style="fill:#666666"
+       id="rect3001"
+       width="22.142857"
+       height="0.71428573"
+       x="198.57143"
+       y="355.93362" />
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="132.14287"
+       y="375.93362"
+       id="text3003"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3005"
+         x="132.14287"
+         y="375.93362"
+         style="font-size:22px">Attribute1</tspan></text>
+    <rect
+       style="fill:#666666"
+       id="rect2999-0"
+       width="116.42857"
+       height="28.571428"
+       x="258.21429"
+       y="351.64789" />
+    <rect
+       style="fill:#666666"
+       id="rect3001-6"
+       width="22.142857"
+       height="0.71428573"
+       x="326.78571"
+       y="355.21933" />
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="260.35715"
+       y="375.21933"
+       id="text3003-6"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3005-1"
+         x="260.35715"
+         y="375.21933"
+         style="font-size:22px">Attribute2</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="392.14285"
+       y="348.79074"
+       id="text3034"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3036"
+         x="392.14285"
+         y="348.79074" /></text>
+    <rect
+       style="fill:#008080"
+       id="rect2987-1"
+       width="263.57147"
+       height="72.85714"
+       x="126.0714"
+       y="396.64789" />
+    <rect
+       style="fill:#008000"
+       id="rect2989-5"
+       width="117.14286"
+       height="29.285715"
+       x="129.64284"
+       y="400.93359" />
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="133.92854"
+       y="425.2193"
+       id="text2991-0"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan2993-0"
+         x="133.92854"
+         y="425.2193"
+         style="font-size:22px;fill:#cccccc">vtable ptr</tspan></text>
+    <rect
+       style="fill:#666666"
+       id="rect2999-8"
+       width="116.42857"
+       height="28.571428"
+       x="130.35713"
+       y="435.93359" />
+    <rect
+       style="fill:#666666"
+       id="rect3001-2"
+       width="22.142857"
+       height="0.71428573"
+       x="198.92854"
+       y="439.50504" />
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="132.49998"
+       y="459.50504"
+       id="text3003-3"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3005-3"
+         x="132.49998"
+         y="459.50504"
+         style="font-size:22px">Attribute1</tspan></text>
+    <rect
+       style="fill:#666666"
+       id="rect2999-0-9"
+       width="116.42857"
+       height="28.571428"
+       x="258.57141"
+       y="435.2193" />
+    <rect
+       style="fill:#666666"
+       id="rect3001-6-6"
+       width="22.142857"
+       height="0.71428573"
+       x="327.14282"
+       y="438.79074" />
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="260.71426"
+       y="458.79074"
+       id="text3003-6-7"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3005-1-0"
+         x="260.71426"
+         y="458.79074"
+         style="font-size:22px">Attribute2</tspan></text>
+    <rect
+       style="fill:#008080"
+       id="rect2987-4"
+       width="263.57147"
+       height="72.85714"
+       x="126.0714"
+       y="479.50504" />
+    <rect
+       style="fill:#008000"
+       id="rect2989-4"
+       width="117.14286"
+       height="29.285715"
+       x="129.64285"
+       y="483.79074" />
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="133.92856"
+       y="508.07645"
+       id="text2991-6"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan2993-9"
+         x="133.92856"
+         y="508.07645"
+         style="font-size:22px;fill:#cccccc">vtable ptr</tspan></text>
+    <rect
+       style="fill:#666666"
+       id="rect2999-4"
+       width="116.42857"
+       height="28.571428"
+       x="130.35712"
+       y="518.79071" />
+    <rect
+       style="fill:#666666"
+       id="rect3001-9"
+       width="22.142857"
+       height="0.71428573"
+       x="198.92856"
+       y="522.36218" />
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="132.5"
+       y="542.36218"
+       id="text3003-31"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3005-7"
+         x="132.5"
+         y="542.36218"
+         style="font-size:22px">Attribute1</tspan></text>
+    <rect
+       style="fill:#666666"
+       id="rect2999-0-1"
+       width="116.42857"
+       height="28.571428"
+       x="258.57141"
+       y="518.07642" />
+    <rect
+       style="fill:#666666"
+       id="rect3001-6-5"
+       width="22.142857"
+       height="0.71428573"
+       x="327.14285"
+       y="521.64789" />
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="260.71426"
+       y="541.64789"
+       id="text3003-6-0"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3005-1-07"
+         x="260.71426"
+         y="541.64789"
+         style="font-size:22px">Attribute2</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="222.85715"
+       y="573.79071"
+       id="text3118"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3120"
+         x="222.85715"
+         y="573.79071"
+         style="font-size:72px;fill:#ffffff">...</tspan></text>
+  </g>
+</svg>

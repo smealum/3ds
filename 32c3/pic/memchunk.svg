@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="99.244537mm"
+   height="150.9715mm"
+   viewBox="0 0 351.65387 534.93837"
+   id="svg4139"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="memchunk.svg">
+  <defs
+     id="defs4141" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.96116412"
+     inkscape:cx="220.65878"
+     inkscape:cy="280.07579"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1018"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
+  <metadata
+     id="metadata4144">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Ebene 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-128.00787,-175.43466)">
+    <rect
+       style="fill:#000080;fill-opacity:1"
+       id="rect4687"
+       width="351.65387"
+       height="534.93835"
+       x="128.00787"
+       y="175.43466" />
+    <rect
+       style="fill:#ffc600;fill-opacity:0.21000001"
+       id="rect4736"
+       width="323.69806"
+       height="205.9897"
+       x="142.72144"
+       y="188.67686" />
+    <rect
+       style="fill:#00a8c2;fill-opacity:1"
+       id="rect4689"
+       width="275.14337"
+       height="52.968765"
+       x="166.26311"
+       y="198.97635"
+       ry="0" />
+    <rect
+       style="fill:#00807a;fill-opacity:1"
+       id="rect4689-5"
+       width="275.14337"
+       height="52.968765"
+       x="166.99876"
+       y="265.18732"
+       ry="0" />
+    <rect
+       style="fill:#00807a;fill-opacity:1"
+       id="rect4689-5-9"
+       width="275.14337"
+       height="52.968765"
+       x="166.99878"
+       y="331.39832"
+       ry="0" />
+    <rect
+       style="fill:#000000;fill-opacity:0.5"
+       id="rect4750"
+       width="320.75537"
+       height="258.00998"
+       x="144.19278"
+       y="404.96606" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:41.94555664px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="253.78059"
+       y="244.25041"
+       id="text4752"
+       sodipodi:linespacing="125%"
+       transform="scale(1.0145422,0.98566626)"><tspan
+         sodipodi:role="line"
+         id="tspan4754"
+         x="253.78059"
+         y="244.25041"
+         style="fill:#000000">size</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="222.64667"
+       y="304.83118"
+       id="text4756"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4758"
+         x="222.64667"
+         y="304.83118">next ptr </tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="221.96947"
+       y="370.37567"
+       id="text4756-5"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4758-7"
+         x="221.96947"
+         y="370.37567">prev ptr </tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="228.88911"
+       y="546.72534"
+       id="text4778"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4780"
+         x="228.88911"
+         y="546.72534"
+         style="fill:#ffffff">pages...</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:39.45881271px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="150.87032"
+       y="707.3783"
+       id="text4784"
+       sodipodi:linespacing="125%"
+       transform="scale(1.0137152,0.98647037)"><tspan
+         sodipodi:role="line"
+         id="tspan4786"
+         x="150.87032"
+         y="707.3783"
+         style="fill:#ffffff">Memory chunk</tspan></text>
+  </g>
+</svg>
