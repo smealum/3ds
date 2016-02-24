@@ -178,6 +178,16 @@ window.onload=function(){
         '28' : regions,
         '29' : regions,
         '30' : regions,
+        '31' : regions,
+        '32' : regions,
+        '33' : regions,
+        '34' : regions,
+        '35' : regions,
+        '36' : regions,
+        '37' : regions,
+        '38' : regions,
+        '39' : regions,
+        '137' : regions,
         '999' : regions
     }
 
