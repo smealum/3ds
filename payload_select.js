@@ -215,7 +215,8 @@ window.onload=function(){
             '3': zeroMicro_1,
             '4': zeroMicro_1,
             '5': zeroMicro_1,
-            '6': zeroMicro_1
+            '6': zeroMicro_1,
+            '7': zeroMicro_1
         }
     }
 
