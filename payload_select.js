@@ -44,7 +44,14 @@ function getMenuVersion(v)
         }
         else if (v[1]==6)
         {
+            if (v[4]=="K") {
+                return "6166_kor";
+            }
             return "16404";
+        }
+        else if (v[1]>=7 && v[4]=="K")
+        {
+            return "7175_kor";
         }
         else if (v[1]==7)
         {
@@ -66,6 +73,10 @@ function getMenuVersion(v)
             {
                 return "20480_usa";
             }
+            else if(v[4]=="K")
+            {
+                return "7175_kor";
+            }
             else
             {
                 return "19456";
@@ -73,6 +84,10 @@ function getMenuVersion(v)
         }else if(v[1]==1)
         {
             if (v[4]=="U")
+            {
+                return "21504_usa";
+            }
+            else if(v[4]=="K")
             {
                 return "21504_usa";
             }
@@ -86,6 +101,10 @@ function getMenuVersion(v)
             {
                 return "22528_usa";
             }
+            else if (v[4]=="K")
+            {
+                return "9216_kor";
+            }
             else
             {
                 return "21504";
@@ -95,6 +114,10 @@ function getMenuVersion(v)
             if (v[4]=="U")
             {
                 return "23552_usa";
+            }
+            else if (v[4]=="K")
+            {
+                return "10240_kor";
             }
             else
             {
@@ -106,6 +129,10 @@ function getMenuVersion(v)
             {
                 return "24578_usa";
             }
+            else if (v[4]=="K")
+            {
+                return "11266_kor";
+            }
             else
             {
                 return "23554";
@@ -115,6 +142,10 @@ function getMenuVersion(v)
             if (v[4]=="U")
             {
                 return "25600_usa";
+            }
+            else if(v[4]=="K")
+            {
+                return "12288_kor";
             }
             else
             {
@@ -160,7 +191,8 @@ window.onload=function(){
     var regions = {
         'E' : {},
         'U' : {},
-        'J' : {}
+        'J' : {},
+        'K' : {},
     }
 
     var NUPs_1 = {
