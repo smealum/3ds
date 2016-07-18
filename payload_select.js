@@ -20,97 +20,148 @@ function getFirmVersion(v)
 
 function getMenuVersion(v)
 {
-    if(v[0]==9)
+    if(v[4]=="K")
     {
-        if (v[1]==0 || v[1]==1)
+        if(v[0] == 9)
         {
-            return "11272";
+            if (v[1]==6)
+            {
+                return "6166_kor";
+            }else if (v[1]>6)
+            {
+                return "7175_kor";
+            }
+        }else if(v[0] == 10)
+        {
+            if (v[1]==0)
+            {
+                return "7175_kor";
+            }else if (v[1]==1)
+            {
+                return "8192_kor";
+            }else if (v[1]==2)
+            {
+                return "9216_kor";
+            }else if (v[1]==3)
+            {
+                return "10240_kor";
+            }else if (v[1]>=6)
+            {
+                return "12288_kor";
+            }else if (v[1]>=4)
+            {
+                return "11266_kor";
+            }
+        }else if(v[0] == 11)
+        {
+            if (v[1]==0)
+            {
+                return "12288_kor";
+            }
         }
-        else if (v[1]==2)
+    }else{
+        if(v[0]==9)
         {
-            return "12288";
-        }
-        else if (v[1]==3)
-        {
-            return "13330";
-        }
-        else if (v[1]==4)
-        {
-            return "14336";
-        }
-        else if (v[1]==5)
-        {
-            return "15360";
-        }
-        else if (v[1]==6)
-        {
-            return "16404";
-        }
-        else if (v[1]==7)
-        {
-            return "17415";
-        }
-        else if (v[1]==9 && v[4]=="U")
-        {
-            return "20480_usa";
-        }
-        else if (v[1]>=8)
-        {
-            return "19456";
-        }
-    }else if(v[0]==10)
-    {
-        if(v[1]==0)
-        {
-            if (v[4]=="U")
+            if (v[1]==0 || v[1]==1)
+            {
+                return "11272";
+            }
+            else if (v[1]==2)
+            {
+                return "12288";
+            }
+            else if (v[1]==3)
+            {
+                return "13330";
+            }
+            else if (v[1]==4)
+            {
+                return "14336";
+            }
+            else if (v[1]==5)
+            {
+                return "15360";
+            }
+            else if (v[1]==6)
+            {
+                return "16404";
+            }
+            else if (v[1]==7)
+            {
+                return "17415";
+            }
+            else if (v[1]==9 && v[4]=="U")
             {
                 return "20480_usa";
             }
-            else
+            else if (v[1]>=8)
             {
                 return "19456";
             }
-        }else if(v[1]==1)
+        }else if(v[0]==10)
         {
-            if (v[4]=="U")
+            if(v[1]==0)
             {
-                return "21504_usa";
-            }
-            else
+                if (v[4]=="U")
+                {
+                    return "20480_usa";
+                }
+                else
+                {
+                    return "19456";
+                }
+            }else if(v[1]==1)
             {
-                return "20480";
-            }
-        }else if(v[1]==2)
-        {
-            if (v[4]=="U")
+                if (v[4]=="U")
+                {
+                    return "21504_usa";
+                }
+                else
+                {
+                    return "20480";
+                }
+            }else if(v[1]==2)
             {
-                return "22528_usa";
-            }
-            else
+                if (v[4]=="U")
+                {
+                    return "22528_usa";
+                }
+                else
+                {
+                    return "21504";
+                }
+            }else if(v[1]==3)
             {
-                return "21504";
-            }
-        }else if(v[1]==3)
-        {
-            if (v[4]=="U")
+                if (v[4]=="U")
+                {
+                    return "23552_usa";
+                }
+                else
+                {
+                    return "22528";
+                }
+            }else if(v[1]==4 || v[1]==5)
             {
-                return "23552_usa";
-            }
-            else
+                if (v[4]=="U")
+                {
+                    return "24578_usa";
+                }
+                else
+                {
+                    return "23554";
+                }
+            }else if(v[1]>=6)
             {
-                return "22528";
+                if (v[4]=="U")
+                {
+                    return "25600_usa";
+                }
+                else
+                {
+                    return "24576";
+                }
             }
-        }else if(v[1]==4 || v[1]==5)
-        {
-            if (v[4]=="U")
-            {
-                return "24578_usa";
-            }
-            else
-            {
-                return "23554";
-            }
-        }else if(v[1]>=6)
+        }else if(v[0]==11)
         {
             if (v[4]=="U")
             {
@@ -120,16 +171,6 @@ function getMenuVersion(v)
             {
                 return "24576";
             }
-        }
-    }else if(v[0]==11)
-    {
-        if (v[4]=="U")
-        {
-            return "25600_usa";
-        }
-        else
-        {
-            return "24576";
         }
     }
 }
