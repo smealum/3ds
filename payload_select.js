@@ -160,7 +160,8 @@ window.onload=function(){
     var regions = {
         'E' : {},
         'U' : {},
-        'J' : {}
+        'J' : {},
+        'K' : {}
     }
 
     var NUPs_1 = {
