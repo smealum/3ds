@@ -57,6 +57,9 @@ function getMenuVersion(v)
             if (v[1]==0)
             {
                 return "12288_kor";
+            }else if (v[1]==1)
+            {
+                return "13312_kor";
             }
         }
     }else{
@@ -163,13 +166,25 @@ function getMenuVersion(v)
             }
         }else if(v[0]==11)
         {
-            if (v[4]=="U")
+            if (v[1]==0)
             {
-                return "25600_usa";
-            }
-            else
-            {
-                return "24576";
+                if (v[4]=="U")
+                {
+                    return "25600_usa";
+                }
+                else
+                {
+                    return "24576";
+                }
+            }else{
+                if (v[4]=="U")
+                {
+                    return "26624_usa";
+                }
+                else
+                {
+                    return "25600";
+                }
             }
         }
     }
