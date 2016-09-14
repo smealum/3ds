@@ -286,7 +286,8 @@ window.onload=function(){
             '7': zeroMicro_1
         },
         '11': {
-            '0': zeroMicro_1
+            '0': zeroMicro_1,
+            '1': zeroMicro_1
         }
     }
 
