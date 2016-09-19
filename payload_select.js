@@ -208,6 +208,11 @@ function getFilenameFromVersion(v)
     return getFirmVersion(v)+"_"+getRegion(v)+"_"+getMenuVersion(v)+"_"+getMsetVersion(v);
 }
 
+function versionNeedsQrInstaller(v)
+{
+    return v[0] >= 11;
+}
+
 window.onload=function(){
 ;
 (function () {
