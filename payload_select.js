@@ -57,7 +57,7 @@ function getMenuVersion(v)
             if (v[1]==0)
             {
                 return "12288_kor";
-            }else if (v[1]==1)
+            }else if (v[1]==1 || v[1]==2)
             {
                 return "13312_kor";
             }
@@ -292,7 +292,8 @@ window.onload=function(){
         },
         '11': {
             '0': zeroMicro_1,
-            '1': zeroMicro_1
+            '1': zeroMicro_1,
+            '2': zeroMicro_1
         }
     }
 
