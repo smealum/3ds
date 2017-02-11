@@ -60,6 +60,9 @@ function getMenuVersion(v)
             }else if (v[1]==1 || v[1]==2)
             {
                 return "13312_kor";
+            }else if (v[1]==3)
+            {
+                return "14336_kor";
             }
         }
     }else{
@@ -176,7 +179,7 @@ function getMenuVersion(v)
                 {
                     return "24576";
                 }
-            }else{
+            }else if(v[1]==1 || v[1]==2){
                 if (v[4]=="U")
                 {
                     return "26624_usa";
@@ -184,6 +187,15 @@ function getMenuVersion(v)
                 else
                 {
                     return "25600";
+                }
+            }else{
+                if (v[4]=="U")
+                {
+                    return "27648_usa";
+                }
+                else
+                {
+                    return "26624";
                 }
             }
         }
@@ -293,7 +305,8 @@ window.onload=function(){
         '11': {
             '0': zeroMicro_1,
             '1': zeroMicro_1,
-            '2': zeroMicro_1
+            '2': zeroMicro_1,
+            '3': zeroMicro_1
         }
     }
 
