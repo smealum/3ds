@@ -310,9 +310,41 @@ window.onload=function(){
         }
     }
 
+    var newOptions = {
+        '9': {
+            '0': zeroMicro_1,
+            '1': zeroMicro_1,
+            '2': zeroMicro_1,
+            '3': zeroMicro_1,
+            '4': zeroMicro_1,
+            '5': zeroMicro_1,
+            '6': zeroMicro_1,
+            '7': zeroMicro_1,
+            '8': zeroMicro_1,
+            '9': zeroMicro_1
+        },
+        '10': {
+            '0': zeroMicro_1,
+            '1': zeroMicro_1,
+            '2': zeroMicro_1,
+            '3': zeroMicro_1,
+            '4': zeroMicro_1,
+            '5': zeroMicro_1,
+            '6': zeroMicro_1,
+            '7': zeroMicro_1
+        },
+        '11': {
+            '0': zeroMicro_1,
+            '1': zeroMicro_1,
+            '2': zeroMicro_1,
+            '3': zeroMicro_1,
+            '4': zeroMicro_1
+        }
+    }
+
     var options = {
         'OLD': oldOptions,
-        'NEW': oldOptions
+        'NEW': newOptions
     }
 
     var state = {};
