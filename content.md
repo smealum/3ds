@@ -1,6 +1,7 @@
-Welcome to the official 3DS Homebrew Launcher website ! This page is meant to be a hub between all the best and newest ways to get homebrew running on your system.
+Welcome to the official 3DS Homebrew Launcher website ! This page is meant to be a hub between all the best and newest ways to get homebrew running on your system. 
+If you want to see homebrew in action, check out [this video](https://www.youtube.com/watch?v=xryrEpVbCrk)!
 
-# What is homebrew ?
+# What is homebrew?
 
 	Homebrew is what we call unofficial software made by amateur developers for closed systems such as the 3DS. This includes both games and applications, and in practice getting homebrew on your 3DS means you'll be able to :
 
@@ -9,7 +10,7 @@ Welcome to the official 3DS Homebrew Launcher website ! This page is meant to be
 		- Make your own themes to use in home menu.
 		- Play old SNES games in blargSNES.
 
-# How do I get homebrew running on my console ?
+# How do I get homebrew running on my console?
 
 	Getting homebrew on your 3DS has never been easier ! All you need is one or more of the following titles and a bit of patience :
 
