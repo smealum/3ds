@@ -5,10 +5,10 @@ If you want to see homebrew in action, check out [this video](https://www.youtub
 
 Homebrew is what we call unofficial software made by amateur developers for closed systems such as the 3DS. This includes both games and applications, and in practice getting homebrew on your 3DS means you'll be able to :
 	
-- Play cool games such as Aperture Science 3D, a free (and still work-in-progress) adaptation of Portal for the 3DS.
-- Play out-of-region games you own.
-- Make your own themes to use in home menu.
-- Play old SNES games in blargSNES.
+![Aperture science 3D](https://smealum.github.io/3ds/images/as3ds.png) Play cool games such as [Aperture Science 3D](https://github.com/smealum/portal3DS), a free (and still work-in-progress) adaptation of Portal for the 3DS.
+![RegionFOUR](https://smealum.github.io/3ds/images/rfree_icon.png) [Play out-of-region games](https://github.com/smealum/regionFOUR) you own.
+![Custom Themes](https://smealum.github.io/3ds/images/theme.png) [Make your own themes](https://github.com/usagirei/3DS-Theme-Editor/releases) to [use in home menu](https://github.com/astronautlevel2/Anemone3DS/releases).
+![BlargSNES](https://smealum.github.io/3ds/images/blargsnes.png) Play old SNES games in [blargSNES](http://blargsnes.kuribo64.net/).
 
 # How do I get homebrew running on my console?
 
@@ -19,7 +19,7 @@ Getting homebrew on your 3DS has never been easier ! All you need is one or more
 
 	1. First go down to the "preparing your SD card" section and follow those steps, then come back. Don't worry, we'll wait for you !
 
-	NOTE : the following steps might be slightly confusing to some people. If you find you're not sure what the steps are referring to, please just head over to the Youtube video showing them being executed here.
+	NOTE : the following steps might be slightly confusing to some people. If you find you're not sure what the steps are referring to, please just head over to [the Youtube video showing them being executed here](https://www.youtube.com/watch?v=vwX92Hf0Dsg).
 
 	2. On your 3DS, open the System Settings app, then go to Internet Settings and Connection Settings. From there, select your favorite Connection, tap the Change Settings button, and on the second page head over to the DNS section. Once there, select "No" for "Auto-obtain DNS", and under Detailed Setup, enter the following address : 107.211.140.065.
 	3. Save these new settings and close the System Settings app.
@@ -33,15 +33,15 @@ Getting homebrew on your 3DS has never been easier ! All you need is one or more
 
 	1. First go down to the "preparing your SD card" section and follow those steps, then come back. Don't worry, we'll wait for you !
 			
-	NOTE : the following steps might be slightly confusing to some people. If you find you're not sure what the steps are referring to, please just head over to the Youtube video showing them being executed here.
+	NOTE : the following steps might be slightly confusing to some people. If you find you're not sure what the steps are referring to, please just head over to [the Youtube video showing them being executed here](https://www.youtube.com/watch?v=vwX92Hf0Dsg).
 			
 	2. Setup an initial way to run homebrew on your system, such as tubehax or ninjhax. If you installed ninjhax a while ago, please uninstall it and reinstall it ! Your version might be outdated; installing ironhax requires ninjhax 2.1 or more recent.
 	3. Download the ironhax installer. If you downloaded the Homebrew Starter Kit below, you should already have it !
-	4. Run the ironhax installer and follow the instructions on screen. Make sure your 3DS is connected to the internet for the install !
+	4. Run [the ironhax installer](http://smealum.github.io/ninjhax2/installer.zip) and follow the instructions on screen. Make sure your 3DS is connected to the internet for the install !
 	5. Reboot your 3DS and open IronFall. Select the save slot that says "ironhax" and press A. The Homebrew Launcher will start !
 
 - Cubic Ninja
-	If you own a copy of Cubic Ninja (and don't plan on selling it for massive profits), please head over to the ninjhax website and follow instructions there.
+	If you own a copy of Cubic Ninja (and don't plan on selling it for massive profits), please head over to [the ninjhax website](http://smealum.github.io/ninjhax2/) and follow instructions there.
 
 Click on the one you own and follow the instructions !
 
@@ -83,15 +83,15 @@ No matter what, you should have a file named boot.3dsx placed at the root of you
 # Credits
 
 Most of the code for ninjhax, ironhax and tubehax was written by smea. Everything pertaining to smashbroshax, oot3dhax, browserhax, menuhax and stickerhax was made by yellows8. The vulnerability used for the original homemenuhax was discovered by yellows8 and exploited jointly by yellows8 and smea. supermysterychunkhax and (v)hax were done entirely by ShinyQuagsire. basicshax and basehaxx were made by mrnbayoh. humblehax is the work of Dazzozo. freakyhax was created by plutoo. In any case a lot of help was provided by the following people : 
-         - yellows8
-         - plutoo
-         - mtheall
-         - fincs
-         - megazig, Bond697
-         - Fluto, Arkhandar (hbmenu design) 
-         - Normmatt, ichfly 
-         - lobo (webpage template) 
-         - CUE (compression code) 
-         - GW (bringing attention to the webkit bug used by tubehax) 
-         - derlanalmeida, ThibG (icons on this page) 
+- yellows8
+- plutoo
+- mtheall
+- fincs
+- megazig, Bond697
+- Fluto, Arkhandar (hbmenu design) 
+- Normmatt, ichfly 
+- lobo (webpage template) 
+- CUE (compression code) 
+- GW (bringing attention to the webkit bug used by tubehax) 
+- derlanalmeida, ThibG (icons on this page) 
 We'd all also like to thank everyone who has been contributing to the 3DS scene in one way or another, including (but not limited to) : yuriks, Subv, sm, StapleButter, bunnei, WinterMute, neobrain, and, like, so many other people.
