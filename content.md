@@ -4,7 +4,7 @@ If you want to see homebrew in action, check out [this video](https://www.youtub
 # What is homebrew?
 
 	Homebrew is what we call unofficial software made by amateur developers for closed systems such as the 3DS. This includes both games and applications, and in practice getting homebrew on your 3DS means you'll be able to :
-
+	
 		![Aperture science](https://smealum.github.io/3ds/images/as3ds.png) Play cool games such as Aperture Science 3D, a free (and still work-in-progress) adaptation of Portal for the 3DS.
 		- Play out-of-region games you own.
 		- Make your own themes to use in home menu.
