@@ -5,10 +5,10 @@ If you want to see homebrew in action, check out [this video](https://www.youtub
 
 Homebrew is what we call unofficial software made by amateur developers for closed systems such as the 3DS. This includes both games and applications, and in practice getting homebrew on your 3DS means you'll be able to :
 	
-![Aperture science 3D](https://smealum.github.io/3ds/images/as3ds.png) Play cool games such as [Aperture Science 3D](https://github.com/smealum/portal3DS), a free (and still work-in-progress) adaptation of Portal for the 3DS.
-![RegionFOUR](https://smealum.github.io/3ds/images/rfree_icon.png) [Play out-of-region games](https://github.com/smealum/regionFOUR) you own.
-![Custom Themes](https://smealum.github.io/3ds/images/theme.png) [Make your own themes](https://github.com/usagirei/3DS-Theme-Editor/releases) to [use in home menu](https://github.com/astronautlevel2/Anemone3DS/releases).
-![BlargSNES](https://smealum.github.io/3ds/images/blargsnes.png) Play old SNES games in [blargSNES](http://blargsnes.kuribo64.net/).
+- Play cool games such as [Aperture Science 3D](https://github.com/smealum/portal3DS), a free (and still work-in-progress) adaptation of Portal for the 3DS.
+- [Play out-of-region games](https://github.com/smealum/regionFOUR) you own.
+- [Make your own themes](https://github.com/usagirei/3DS-Theme-Editor/releases) to [use in home menu](https://github.com/astronautlevel2/Anemone3DS/releases).
+- Play old SNES games in [blargSNES](http://blargsnes.kuribo64.net/).
 
 # How do I get homebrew running on my console?
 
@@ -82,7 +82,8 @@ No matter what, you should have a file named boot.3dsx placed at the root of you
 		 
 # Credits
 
-Most of the code for ninjhax, ironhax and tubehax was written by smea. Everything pertaining to smashbroshax, oot3dhax, browserhax, menuhax and stickerhax was made by yellows8. The vulnerability used for the original homemenuhax was discovered by yellows8 and exploited jointly by yellows8 and smea. supermysterychunkhax and (v)hax were done entirely by ShinyQuagsire. basicshax and basehaxx were made by mrnbayoh. humblehax is the work of Dazzozo. freakyhax was created by plutoo. In any case a lot of help was provided by the following people : 
+Most of the code for ninjhax, ironhax and tubehax was written by smea. Everything pertaining to smashbroshax, oot3dhax, browserhax, menuhax and stickerhax was made by yellows8. The vulnerability used for the original homemenuhax was discovered by yellows8 and exploited jointly by yellows8 and smea. supermysterychunkhax and (v)hax were done entirely by ShinyQuagsire. basicshax and basehaxx were made by mrnbayoh. humblehax is the work of Dazzozo. freakyhax was created by plutoo. In any case a lot of help was provided by the following people :
+
 - yellows8
 - plutoo
 - mtheall
@@ -93,5 +94,6 @@ Most of the code for ninjhax, ironhax and tubehax was written by smea. Everythin
 - lobo (webpage template) 
 - CUE (compression code) 
 - GW (bringing attention to the webkit bug used by tubehax) 
-- derlanalmeida, ThibG (icons on this page) 
+- derlanalmeida, ThibG (icons on this page)
+
 We'd all also like to thank everyone who has been contributing to the 3DS scene in one way or another, including (but not limited to) : yuriks, Subv, sm, StapleButter, bunnei, WinterMute, neobrain, and, like, so many other people.
