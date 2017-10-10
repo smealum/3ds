@@ -15,6 +15,7 @@ Homebrew is what we call unofficial software made by amateur developers for clos
 Getting homebrew on your 3DS has never been easier ! All you need is one or more of the following titles and a bit of patience :
 
 - YouTube
+
 	In order to install tubehax, you will need a console whose firmware version is between 9.0 and 9.9, as well as the YouTube application (available for free on eShop) and an internet connection.
 
 	1. First go down to the "preparing your SD card" section and follow those steps, then come back. Don't worry, we'll wait for you !
@@ -28,6 +29,7 @@ Getting homebrew on your 3DS has never been easier ! All you need is one or more
 	6. Wait for a few seconds. If you did all the previous steps right, the exploit should run and the Homebrew Launcher should load up !
 
 - IronFall
+
 	Much like tubehax, ironhax requires that your console be on a firmware version between 9.0 and 9.9, and that you have IronFall (previously available for free on the eShop) installed on it.
 	Unlike tubehax and ninjhax however, IronFall is not "self-sufficient" : you will need either tubehax or ninjhax to perform the initial ironhax install. The advantage of ironhax is that unlike tubehax, it only requires an internet connection the first time; after that, you'll be free to use it untethered !
 
@@ -41,6 +43,7 @@ Getting homebrew on your 3DS has never been easier ! All you need is one or more
 	5. Reboot your 3DS and open IronFall. Select the save slot that says "ironhax" and press A. The Homebrew Launcher will start !
 
 - Cubic Ninja
+
 	If you own a copy of Cubic Ninja (and don't plan on selling it for massive profits), please head over to [the ninjhax website](http://smealum.github.io/ninjhax2/) and follow instructions there.
 
 Click on the one you own and follow the instructions !
