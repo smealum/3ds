@@ -16,25 +16,57 @@ Find the one you own and follow the instructions.
 
 Getting homebrew on your 3DS has never been easier! All you need is one or more of the following titles and a bit of patience:
 
-## Nintendo 3DS Sound
+### Nintendo 3DS Sound
 
 __NOTE__: unfortunately this entrypoint was patched in update 11.4. It still works on 11.3 and below.
 
 You can now access homebrew through the 3DS's stock sound application! All you need to do is grab the right sound file over at nedwill's soundhax website, and place it at the root of your SD card along with the right otherapp payload.
 
-## Cubic Ninja
+### Cubic Ninja
 
 If you own a copy of Cubic Ninja (and don't plan on selling it for massive profits), please head over to [the ninjhax website](http://smealum.github.io/ninjhax2/) and follow instructions there.
 
-## Freakyforms Deluxe
+### Freakyforms Deluxe
 
 If you own a copy of Freakyforms Deluxe, please head over to [plutoo's freakyhax](https://plutooo.github.io/freakyhax/) website and follow instructions there.
 
-## The Legend of Zelda: Ocarina of Time
+### The Legend of Zelda: Ocarina of Time
 
 If you own a copy of The Legend of Zelda: Ocarina of Time, you can install oot3dhax. This can either be done by first using another hax method to run the oot3dhax installer, or by directly writing a raw savegame image to your gamecard. For the former option, you can find the installer in the [homebrew starter kit](https://smealum.github.io/ninjhax2/starter.zip). For the latter, you can find more information on [yellows8's repository](https://github.com/yellows8/oot3dhax/releases).
 
-## IronFall
+### Steel Diver: Sub Wars
+
+If you've downloaded the free Steel Diver: Sub Wars eshop game, you can use it as a homebrew entrypoint. Just head over to vegaroxas's [steelhax webpage](https://vegaroxas.github.io/) and follow the instructions in the archive's readme file!
+
+### Paper Mario: Sticker Star
+
+If you own a copy of Paper Mario: Sticker Star, please head over to yellows8's [stickerhax website](https://github.com/yellows8/stickerhax) and follow instructions there.
+
+### Pokémon Omega Ruby and Alpha Sapphire
+
+If you own a copy of Pokémon Omega Ruby (boo) or Alpha Sapphire (yay), please head over to mrnbayoh's [basehaxx website](https://mrnbayoh.github.io/basehaxx/) and follow instructions there.
+
+### Pokémon Super Mystery Dungeon
+
+If you own a copy of Pokémon Super Mystery Dungeon, you can install ShinyQuagsire's supermysterychunkhax. Currently, initial installation for this can only be done if you or one of your friends already has access to homebrew. To get supermysterychunkhax, you can follow the instructions from [it's official webpage](http://smd.salthax.org/).
+
+### VVVVVV
+
+If you own a copy of VVVVVV, please head over to shinyquagsire's [(v)hax website](https://vvvvvv.salthax.org/) and follow instructions there.
+
+### Citizens of Earth
+
+If you own a copy of Citizens of Earth, please head over to Dazzozo's [humblehax website](https://citizens.salthax.org/) and follow instructions there.
+
+### Super Smash Brosthers for Nintendo 3DS
+
+If you own Super Smash Bros, a New 3DS, some compatible wifi hardware and aren't afraid of going under the hood, then you can head over to yellows8's [smashbroshax webpage](https://github.com/yellows8/3ds_smashbroshax) and follow instructions there. Do note that this is currently the least convenient method of running homebrew, and will likely be best suited to installing a more permanent setup such as ironhax (see above).
+
+### Smile Basic
+
+If you own a copy of Smile Basic, please head over to either mrnbayoh's [basicsploit website](https://mrnbayoh.github.io/basicsploit/) (currently supports only USA) or plutoo's [smilehax website](https://plutooo.github.io/smilehax/) (supports JPN and USA) and follow instructions there.
+
+### IronFall
 
 __NOTE__: unfortunately the latest version of Ironfall can no longer run ironhax. Only those who downloaded Ironfall before September 2015 will be able to run ironhax.
 
@@ -53,7 +85,15 @@ __NOTE__: the following steps might be slightly confusing to some people. If you
 4. Run [the ironhax installer](http://smealum.github.io/ninjhax2/installer.zip) and follow the instructions on screen. Make sure your 3DS is connected to the internet for the install!
 5. Reboot your 3DS and open IronFall. Select the save slot that says "ironhax" and press A. The Homebrew Launcher will start.
 
-## Youtube
+### Web Browser
+
+If your 3DS is on a compatible version, you can use the stock web browser to get homebrew running! Head over to yellows8's [browserhax page](http://yls8.mtheall.com/3dsbrowserhax.php) and follow instructions there. Note that browserhax does not currently support the latest firmware versions.
+
+### Home Menu
+
+If your 3DS is on a compatible version, you can use home menu itself (!) as a permanent entrypoint to get homebrew running! Head over to yellows8's [homemenuhax page](https://github.com/yellows8/3ds_homemenuhax) and follow instructions there. Note that menuhax only works on firmware versions between 9.0 and 11.2.
+
+### Youtube
 
 __NOTE__: unfortunately Nintendo has patched tubehax and made it impossible to use the YouTube application without updating. tubehax is dead, long live browserhax. 
 
