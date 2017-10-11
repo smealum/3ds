@@ -32,17 +32,21 @@ Getting homebrew on your 3DS has never been easier! All you need is one or more 
 
 - IronFall
 
-	Much like tubehax, ironhax requires that your console be on a firmware version between 9.0 and 9.9, and that you have IronFall (previously available for free on the eShop) installed on it.
-	Unlike tubehax and ninjhax however, IronFall is not "self-sufficient" : you will need either tubehax or ninjhax to perform the initial ironhax install. The advantage of ironhax is that unlike tubehax, it only requires an internet connection the first time; after that, you'll be free to use it untethered!
+NOTE : unfortunately the latest version of Ironfall can no longer run ironhax. Only those who downloaded Ironfall before September 2015 will be able to run ironhax.
+~~NOTE : it is currently possible to download the original (still vulnerable) version of Ironfall by using homebrew. To do this, simply install browserhax (see above), and use it to download the old version of IronFall by starting the "eShop - old version downloader" application in homebrew menu and downloading IronFall like your normally would. Be quick, this won't last long!~~
 
-	1. First go down to the "preparing your SD card" section and follow those steps, then come back. Don't worry, we'll wait for you!
+Much like tubehax, ironhax requires that your console be on a firmware version between 9.0 and 9.9, and that you have IronFall (previously available for free on the eShop) installed on it.
+
+Unlike tubehax and ninjhax however, IronFall is not "self-sufficient" : you will need either tubehax or ninjhax to perform the initial ironhax install. The advantage of ironhax is that unlike tubehax, it only requires an internet connection the first time; after that, you'll be free to use it untethered!
+
+1. First go down to the "preparing your SD card" section and follow those steps, then come back. Don't worry, we'll wait for you!
 			
-	NOTE: the following steps might be slightly confusing to some people. If you find you're not sure what the steps are referring to, please just head over to [the Youtube video showing them being executed here](https://www.youtube.com/watch?v=vwX92Hf0Dsg).
+NOTE: the following steps might be slightly confusing to some people. If you find you're not sure what the steps are referring to, please just head over to [the Youtube video showing them being executed here](https://www.youtube.com/watch?v=vwX92Hf0Dsg).
 			
-	2. Setup an initial way to run homebrew on your system, such as tubehax or ninjhax. If you installed ninjhax a while ago, please uninstall it and reinstall it ! Your version might be outdated; installing ironhax requires ninjhax 2.1 or more recent.
-	3. Download the ironhax installer. If you downloaded the Homebrew Starter Kit below, you should already have it !
-	4. Run [the ironhax installer](http://smealum.github.io/ninjhax2/installer.zip) and follow the instructions on screen. Make sure your 3DS is connected to the internet for the install!
-	5. Reboot your 3DS and open IronFall. Select the save slot that says "ironhax" and press A. The Homebrew Launcher will start.
+2. Setup an initial way to run homebrew on your system, such as tubehax or ninjhax. If you installed ninjhax a while ago, please uninstall it and reinstall it ! Your version might be outdated; installing ironhax requires ninjhax 2.1 or more recent.
+3. Download the ironhax installer. If you downloaded the Homebrew Starter Kit below, you should already have it !
+4. Run [the ironhax installer](http://smealum.github.io/ninjhax2/installer.zip) and follow the instructions on screen. Make sure your 3DS is connected to the internet for the install!
+5. Reboot your 3DS and open IronFall. Select the save slot that says "ironhax" and press A. The Homebrew Launcher will start.
 
 - Cubic Ninja
 
