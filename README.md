@@ -33,6 +33,7 @@ Getting homebrew on your 3DS has never been easier! All you need is one or more 
 - IronFall
 
 NOTE : unfortunately the latest version of Ironfall can no longer run ironhax. Only those who downloaded Ironfall before September 2015 will be able to run ironhax.
+
 ~~NOTE : it is currently possible to download the original (still vulnerable) version of Ironfall by using homebrew. To do this, simply install browserhax (see above), and use it to download the old version of IronFall by starting the "eShop - old version downloader" application in homebrew menu and downloading IronFall like your normally would. Be quick, this won't last long!~~
 
 Much like tubehax, ironhax requires that your console be on a firmware version between 9.0 and 9.9, and that you have IronFall (previously available for free on the eShop) installed on it.
@@ -64,7 +65,7 @@ No matter what, you should have a file named boot.3dsx placed at the root of you
 # Frequently Asked Questions
 
 - Where can I find more homebrew applications?
-     You can visit 3dbrew for more homebrew applications.
+     You can visit [3dbrew](http://www.3dbrew.org/wiki/Homebrew_Applications) for more homebrew applications.
 
 - Can I use this to take screenshots?
      Yes. You can take screenshots in either homebrew or commercial games by hitting the HOME button. You can then convert them to PNG by using the screenshot tool included in the starter pack. In order to take screenshots of official games, you will need to run them through HANS.
@@ -82,7 +83,7 @@ No matter what, you should have a file named boot.3dsx placed at the root of you
      We made the decision early on that the homebrew launcher should only work with a highly relocatable executable format as a way to improve compatibility with potential future exploits (such as ironhax and tubehax), which may or may not include the ability to update virtual memory page permissions. 3DSX is a format developed by fincs which allows us to do just that; each section (.text, rodata and data) can be relocated independently, making it perfect for our needs. Compiling as 3DSX rather than CXI will help maximize future compatibility.
 
 - Does this allow region free?
-     It totally does and it's pretty rad. You can access the region free feature directly from the Homebrew Launcher; it's the first option in the list, can't miss it. For more information on the region free feature, please visit regionFOUR's README page, as the exact same limitations currently apply.
+     It totally does and it's pretty rad. You can access the region free feature directly from the Homebrew Launcher; it's the first option in the list, can't miss it. For more information on the region free feature, please visit [regionFOUR's README page](https://github.com/smealum/regionFOUR/blob/master/README.md), as the exact same limitations currently apply.
 
 - Does this let me run roms?
      No. These exploits run strictly in userland, meaning that we do not have full control over the console, and therefore cannot run pirated software. That being said, we have the same amount of access as regular apps and games to the console's hardware, and so we can make some kickass homebrew!
