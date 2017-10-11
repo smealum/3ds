@@ -16,9 +16,23 @@ Find the one you own and follow the instructions.
 
 Getting homebrew on your 3DS has never been easier! All you need is one or more of the following titles and a bit of patience:
 
+## Nintendo 3DS Sound
+
+__NOTE__: unfortunately this entrypoint was patched in update 11.4. It still works on 11.3 and below.
+
+You can now access homebrew through the 3DS's stock sound application! All you need to do is grab the right sound file over at nedwill's soundhax website, and place it at the root of your SD card along with the right otherapp payload.
+
 ## Cubic Ninja
 
 If you own a copy of Cubic Ninja (and don't plan on selling it for massive profits), please head over to [the ninjhax website](http://smealum.github.io/ninjhax2/) and follow instructions there.
+
+## Freakyforms Deluxe
+
+If you own a copy of Freakyforms Deluxe, please head over to [plutoo's freakyhax](https://plutooo.github.io/freakyhax/) website and follow instructions there.
+
+## The Legend of Zelda: Ocarina of Time
+
+If you own a copy of The Legend of Zelda: Ocarina of Time, you can install oot3dhax. This can either be done by first using another hax method to run the oot3dhax installer, or by directly writing a raw savegame image to your gamecard. For the former option, you can find the installer in the [homebrew starter kit](https://smealum.github.io/ninjhax2/starter.zip). For the latter, you can find more information on [yellows8's repository](https://github.com/yellows8/oot3dhax/releases).
 
 ## IronFall
 
