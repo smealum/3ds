@@ -16,11 +16,11 @@ Find the one you own and follow the instructions.
 
 Getting homebrew on your 3DS has never been easier! All you need is one or more of the following titles and a bit of patience:
 
-- Cubic Ninja
+## Cubic Ninja
 
 If you own a copy of Cubic Ninja (and don't plan on selling it for massive profits), please head over to [the ninjhax website](http://smealum.github.io/ninjhax2/) and follow instructions there.
 
-- IronFall
+## IronFall
 
 __NOTE__: unfortunately the latest version of Ironfall can no longer run ironhax. Only those who downloaded Ironfall before September 2015 will be able to run ironhax.
 
@@ -39,7 +39,7 @@ __NOTE__: the following steps might be slightly confusing to some people. If you
 4. Run [the ironhax installer](http://smealum.github.io/ninjhax2/installer.zip) and follow the instructions on screen. Make sure your 3DS is connected to the internet for the install!
 5. Reboot your 3DS and open IronFall. Select the save slot that says "ironhax" and press A. The Homebrew Launcher will start.
 
-- Youtube
+## Youtube
 
 __NOTE__: unfortunately Nintendo has patched tubehax and made it impossible to use the YouTube application without updating. tubehax is dead, long live browserhax. 
 
