@@ -22,9 +22,9 @@ If you own a copy of Cubic Ninja (and don't plan on selling it for massive profi
 
 - IronFall
 
-NOTE : unfortunately the latest version of Ironfall can no longer run ironhax. Only those who downloaded Ironfall before September 2015 will be able to run ironhax.
+__NOTE__: unfortunately the latest version of Ironfall can no longer run ironhax. Only those who downloaded Ironfall before September 2015 will be able to run ironhax.
 
-~~NOTE : it is currently possible to download the original (still vulnerable) version of Ironfall by using homebrew. To do this, simply install browserhax (see above), and use it to download the old version of IronFall by starting the "eShop - old version downloader" application in homebrew menu and downloading IronFall like your normally would. Be quick, this won't last long!~~
+~~__NOTE__: it is currently possible to download the original (still vulnerable) version of Ironfall by using homebrew. To do this, simply install browserhax (see above), and use it to download the old version of IronFall by starting the "eShop - old version downloader" application in homebrew menu and downloading IronFall like your normally would. Be quick, this won't last long!~~
 
 Much like tubehax, ironhax requires that your console be on a firmware version between 9.0 and 9.9, and that you have IronFall (previously available for free on the eShop) installed on it.
 
@@ -32,7 +32,7 @@ Unlike tubehax and ninjhax however, IronFall is not "self-sufficient" : you will
 
 1. First go down to the "preparing your SD card" section and follow those steps, then come back. Don't worry, we'll wait for you!
 			
-NOTE: the following steps might be slightly confusing to some people. If you find you're not sure what the steps are referring to, please just head over to [the Youtube video showing them being executed here](https://www.youtube.com/watch?v=vwX92Hf0Dsg).
+__NOTE__: the following steps might be slightly confusing to some people. If you find you're not sure what the steps are referring to, please just head over to [the Youtube video showing them being executed here](https://www.youtube.com/watch?v=vwX92Hf0Dsg).
 			
 2. Setup an initial way to run homebrew on your system, such as tubehax or ninjhax. If you installed ninjhax a while ago, please uninstall it and reinstall it ! Your version might be outdated; installing ironhax requires ninjhax 2.1 or more recent.
 3. Download the ironhax installer. If you downloaded the Homebrew Starter Kit below, you should already have it !
@@ -41,13 +41,13 @@ NOTE: the following steps might be slightly confusing to some people. If you fin
 
 - Youtube
 
-NOTE : unfortunately Nintendo has patched tubehax and made it impossible to use the YouTube application without updating. tubehax is dead, long live browserhax. 
+__NOTE__: unfortunately Nintendo has patched tubehax and made it impossible to use the YouTube application without updating. tubehax is dead, long live browserhax. 
 
 In order to install tubehax, you will need a console whose firmware version is between 9.0 and 10.1, as well as the YouTube application (available for free on eShop) and an internet connection. 
 
 First go down to the "preparing your SD card" section and follow those steps, then come back. Don't worry, we'll wait for you!
 
-NOTE : the following steps might be slightly confusing to some people. If you find you're not sure what the steps are referring to, please just head over to [the Youtube video showing them being executed here](https://www.youtube.com/watch?v=vwX92Hf0Dsg). 
+__NOTE__: the following steps might be slightly confusing to some people. If you find you're not sure what the steps are referring to, please just head over to [the Youtube video showing them being executed here](https://www.youtube.com/watch?v=vwX92Hf0Dsg). 
 
 On your 3DS, open the System Settings app, then go to Internet Settings and Connection Settings. From there, select your favorite Connection, tap the Change Settings button, and on the second page head over to the DNS section. Once there, select "No" for "Auto-obtain DNS", and under Detailed Setup, enter the following address: 107.211.140.065.
 Save these new settings and close the System Settings app.
