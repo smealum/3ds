@@ -16,19 +16,9 @@ Find the one you own and follow the instructions.
 
 Getting homebrew on your 3DS has never been easier! All you need is one or more of the following titles and a bit of patience:
 
-- YouTube
+- Cubic Ninja
 
-	In order to install tubehax, you will need a console whose firmware version is between 9.0 and 9.9, as well as the YouTube application (available for free on eShop) and an internet connection.
-
-	1. First go down to the "preparing your SD card" section and follow those steps, then come back. Don't worry, we'll wait for you.
-
-	NOTE: the following steps might be slightly confusing to some people. If you find you're not sure what the steps are referring to, please just head over to [the Youtube video showing them being executed here](https://www.youtube.com/watch?v=vwX92Hf0Dsg).
-
-	2. On your 3DS, open the System Settings app, then go to Internet Settings and Connection Settings. From there, select your favorite Connection, tap the Change Settings button, and on the second page head over to the DNS section. Once there, select "No" for "Auto-obtain DNS", and under Detailed Setup, enter the following address : 107.211.140.065.
-	3. Save these new settings and close the System Settings app.
-	4. Open the YouTube app. It should redirect you to a firmware selection page.
-	5. Under "Select your firmware version", choose your console's firmware version. Getting this right is very important ! Once you're sure you did it right, hit the Submit button.
-	6. Wait for a few seconds. If you did all the previous steps right, the exploit should run and the Homebrew Launcher should load up!
+If you own a copy of Cubic Ninja (and don't plan on selling it for massive profits), please head over to [the ninjhax website](http://smealum.github.io/ninjhax2/) and follow instructions there.
 
 - IronFall
 
@@ -49,9 +39,23 @@ NOTE: the following steps might be slightly confusing to some people. If you fin
 4. Run [the ironhax installer](http://smealum.github.io/ninjhax2/installer.zip) and follow the instructions on screen. Make sure your 3DS is connected to the internet for the install!
 5. Reboot your 3DS and open IronFall. Select the save slot that says "ironhax" and press A. The Homebrew Launcher will start.
 
-- Cubic Ninja
+- Youtube
 
-	If you own a copy of Cubic Ninja (and don't plan on selling it for massive profits), please head over to [the ninjhax website](http://smealum.github.io/ninjhax2/) and follow instructions there.
+NOTE : unfortunately Nintendo has patched tubehax and made it impossible to use the YouTube application without updating. tubehax is dead, long live browserhax. 
+
+In order to install tubehax, you will need a console whose firmware version is between 9.0 and 10.1, as well as the YouTube application (available for free on eShop) and an internet connection. 
+
+First go down to the "preparing your SD card" section and follow those steps, then come back. Don't worry, we'll wait for you!
+
+NOTE : the following steps might be slightly confusing to some people. If you find you're not sure what the steps are referring to, please just head over to [the Youtube video showing them being executed here](https://www.youtube.com/watch?v=vwX92Hf0Dsg). 
+
+On your 3DS, open the System Settings app, then go to Internet Settings and Connection Settings. From there, select your favorite Connection, tap the Change Settings button, and on the second page head over to the DNS section. Once there, select "No" for "Auto-obtain DNS", and under Detailed Setup, enter the following address: 107.211.140.065.
+Save these new settings and close the System Settings app.
+Open the YouTube app. It should redirect you to a firmware selection page.
+Under "Select your firmware version", choose your console's firmware version. Getting this right is very important ! Once you're sure you did it right, hit the Submit button.
+Wait for a few seconds. If you did all the previous steps right, the exploit should run and the Homebrew Launcher should load up !
+
+The source code for tubehax can be found on [github](https://github.com/smealum/tubehax).
 
 # Preparing your SD card
 
