@@ -200,7 +200,7 @@ function getMenuVersion(v)
                 {
                     return "26624";
                 }
-            }else{
+            }else if(v[1]==5 || v[1]==6){
                 if (v[4]=="U")
                 {
                     return "28673_usa";
@@ -208,6 +208,15 @@ function getMenuVersion(v)
                 else
                 {
                     return "27649";
+                }
+            }else{
+                if (v[4]=="U")
+                {
+                    return "29697_usa";
+                }
+                else
+                {
+                    return "28673";
                 }
             }
         }
