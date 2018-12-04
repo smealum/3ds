@@ -294,6 +294,7 @@ window.onload=function(){
         '39' : regions,
         '40' : regions,
         '41' : regions,
+        '42' : regions,
         '137' : regions,
         '999' : regions
     }
